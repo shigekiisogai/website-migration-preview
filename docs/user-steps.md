@@ -22,3 +22,7 @@ GitHubとの自動連携を希望する場合は、Cloudflare上でこの新規�
 WordPress XMLの提出は任意です。後から利用する場合はREADMEの抽出コマンドを使えます。
 
 独自ドメインへの切り替え、WordPressの停止、学生限定機能、AI機能、課金は今回の作業に含めていません。これらを進めるときは別途決定できます。
+
+## 教育コンテンツ統合試作をローカルで確認する
+
+`integrate-teaching-20261109` ブランチで `npm run build:cloudflare`、`npm run preview:cloudflare` を実行し、localhostのTeaching・Course Materials・日本語ページから2種類の教材へ進んでください。公開サイトは従来の状態です。日英切替、難易度切替、デモ操作、スマートフォン表示をご確認ください。配信先の切替は [教育コンテンツ統合](teaching-integration.md) に記載しています。

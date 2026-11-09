@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>離散選択モデルによる需要予測と推定 | ミクロ経済学 応用事例集</title>
+  <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script defer src="../../assets/language.js"></script>
+  <script defer src="../../assets/models.js"></script>
+  <script defer src="../../assets/i18n.js"></script>
+  <script defer src="../../assets/app.js"></script>
+</head>
+<body class="case-page">
+<a class="skip" href="#main">本文へ</a>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span>ミクロ経済学 応用事例集<small>MICROECONOMICS &amp; GAME THEORY · CASEBOOK</small></span></a>
+  <div class="header-links"><nav aria-label="サイト"><a href="../index.html#cases">事例目録</a><a href="../index.html#fields">分野別目録</a><a href="../about.html">この資料集について</a></nav>
+  <nav class="language-switch" aria-label="言語を選ぶ"><a href="../../ja/cases/discrete-choice-logit.html" data-language="ja" lang="ja" hreflang="ja" aria-current="page">日本語</a> <span aria-hidden="true">｜</span> <a href="../../en/cases/discrete-choice-logit.html" data-language="en" lang="en" hreflang="en">English</a></nav></div>
+</header>
+<main id="main">
+  <div class="page-meta"><span>CASE 02 · 離散選択とマーケティング</span><span class="stage">構想</span><span class="verification">AI作成・原典未確認</span></div>
+  
+  <div class="level-picker" role="group" aria-label="読み方"><span class="picker-label">読み方</span><button data-set-level="1" aria-pressed="true">★1 <span>直感とビジュアル</span></button><button data-set-level="2" aria-pressed="false">★2 <span>簡単なモデル</span></button><button data-set-level="3" aria-pressed="false">★3 <span>論文と推定方法</span></button></div>
+  <noscript><p class="notice">JavaScriptを有効にするとデモを操作できます。現在はすべての難易度の本文を表示しています。</p></noscript>
+  <article><h1 id="離散選択モデルによる需要予測と推定">離散選択モデルによる需要予測と推定</h1><nav class="contents" aria-label="目次"><p>目次</p><ol><li><a href="#問い">問い</a></li><li><a href="#概要">概要</a></li><li><a href="#実例商品選択を分析する">実例：商品選択を分析する</a></li><li><a href="#適用範囲と限界">適用範囲と限界</a></li><li><a href="#モデル">モデル</a></li><li><a href="#データと推定">データと推定</a></li><li><a href="#デモ">デモ</a></li><li><a href="#学ぶ道筋科目">学ぶ道筋（科目）</a></li><li><a href="#将来の仕事の例">将来の仕事の例</a></li><li><a href="#ゼミでの取組み記録">ゼミでの取組み記録</a></li><li><a href="#文献出典">文献・出典</a></li></ol></nav>
+<h2 id="問い">問い</h2>
+<p><strong>問い：価格を上げると、販売数と利潤はどう変わるでしょうか。</strong></p>
+<h2 id="概要">概要</h2>
+<div class="level-content" data-level="1">
+<p>ドリンクA・Bと「買わない」の3択です。Aの価格を上げると、Aが選ばれる割合は下がります。一方で、1本売れたときの利幅は大きくなります。この2つの動きを、スライダーで見比べてみましょう。</p>
+</div>
+<div class="level-content" data-level="2">
+<p>各選択肢の効用を価格と品質で表し、ロジット（logit）モデルで選択確率を計算します。同じ属性に同じ係数を持つ1,000人が1回ずつ選ぶ仮想市場では、選択確率は予測市場シェアになります。</p>
+</div>
+<div class="level-content" data-level="3">
+<p>個人の選択から係数を推定し、その係数を用いて価格変更時の需要を予測する流れを体験します。個票データの最尤推定と、集計シェアからの需要推定は、データの単位と識別の条件を分けて学びます。</p>
+</div>
+<h2 id="実例商品選択を分析する">実例：商品選択を分析する</h2>
+<p>交通手段や商品の選択は、離散選択（discrete choice）モデルの応用例です。McFadden（1974）は条件付きロジットの基礎、Berry（1994）は差別化された商品の市場シェアから需要を分析する方法を学ぶ入口として取り上げます。<strong>実例・文献説明はAI作成・原典未確認</strong>です。</p>
+<h2 id="適用範囲と限界">適用範囲と限界</h2>
+<p>ここでは、実在の商品・企業・消費者の数値を使わず、ドリンクを選ぶ架空の市場を作ります。推定係数や売上予測を実際の事業判断に使うには、対象市場のデータと仮定の検証が必要です。</p>
+<h2 id="モデル">モデル</h2>
+<div class="level-content" data-level="1">
+<p>このモデルでは、価格が低く、品質が高い商品ほど選ばれやすくなります。「買わない」もあるので、両方の商品が高くなると購入そのものを見送る人が増えます。</p>
+<p>1,000人のうちAを選ぶ確率が30%なら、Aの予測販売数は300本です。利潤（profit）は「価格と単位当たり費用の差 × 販売数」で計算します。品質を変えたときの費用増加は、この実験では省略しています。</p>
+</div>
+<div class="level-content" data-level="2">
+<p>価格 p は円、品質 q は0〜5の教材指標です。商品 j の観測可能な効用を次のように置きます。</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>j</mi></msub><mo>=</mo><mi>−</mi><mn>1.2</mn><mfrac><msub><mi>p</mi><mi>j</mi></msub><mn>100</mn></mfrac><mo>+</mo><mn>0.9</mn><msub><mi>q</mi><mi>j</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>V</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">V_j = -1.2\frac{p_j}{100}+0.9q_j,\qquad V_0=0.</annotation></semantics></math></p>
+<p>0は「買わない」を表します。個人ごとの効用 Uᵢⱼ = Vⱼ + εᵢⱼ の誤差が、標準的な第I種極値分布に独立・同一に従うと仮定すると、</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>j</mi></msub><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>V</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mn>1</mn><mo>+</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>V</mi><mi>A</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>V</mi><mi>B</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>P</mi><mn>0</mn></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>V</mi><mi>A</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>V</mi><mi>B</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">P_j=\frac{\exp(V_j)}{1+\exp(V_A)+\exp(V_B)},\qquad P_0=\frac{1}{1+\exp(V_A)+\exp(V_B)}.</annotation></semantics></math></p>
+<p>市場規模 M = 1,000、単位当たり費用 c = 80円、固定費用0円として、</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>j</mi></msub><mo>=</mo><mi>M</mi><msub><mi>P</mi><mi>j</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>π</mi><mi>j</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mi>j</mi></msub><mo>−</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mi>M</mi><msub><mi>P</mi><mi>j</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">Q_j=MP_j,\qquad \pi_j=(p_j-c)MP_j.</annotation></semantics></math></p>
+<p>この係数は仮定した値です。価格の係数−1.2は100円当たりの効用の変化を表します。自己価格弾力性は −1.2(pⱼ/100)(1−Pⱼ) となり、価格とシェアにも依存します。</p>
+</div>
+<div class="level-content" data-level="3">
+<p>効用の水準と誤差の尺度を正規化し、商品間の効用差から係数を識別します。共通係数の条件付きロジットでは、同じ選択集合の全選択肢に共通の項は相殺されます。このデモの「買わない」の属性ベクトルは (0, 0) です。</p>
+<p>標準ロジットのIIA（independence of irrelevant alternatives）は、2つの選択肢の選択確率の比が、他の選択肢の属性に依存しないという制約です。似た商品への代替や好みの個人差を捉えるには、nested logitやmixed logitなどの拡張を検討します。</p>
+<p>実際の価格は未観測品質や需要ショックと相関し得ます。価格変化の因果効果を論じる際は、価格の内生性（endogeneity）と操作変数（instrumental variables）などの識別戦略を検討します。ここでは価格・品質を外生的に生成した架空データを使います。</p>
+</div>
+<h2 id="データと推定">データと推定</h2>
+<p>スライダーの価格・品質、市場規模、費用はすべて教材用の仮定です。購入しない人を含めた1,000人をシェアの分母にします。丸め前の3つの確率の合計は1です。スライダーを動かすと、同じ係数のもとで予測を再計算します。</p>
+<div class="level-content" data-level="3">
+<p>推定実験では、1,800人が各1回、A・B・購入しないの3択から選びます。A・Bの価格（100円単位）を1〜5、品質を0〜5の一様乱数で独立に生成し、真の係数 (−1.2, 0.9) のロジット確率から選択を抽出します。生成方法とseedはコードに固定しています。</p>
+<p>選択された選択肢を示す yᵢⱼ を使い、対数尤度を最大化します。</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>y</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msub><mi>P</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\ell(\beta)=\sum_i\sum_j y_{ij}\log P_{ij}(\beta).</annotation></semantics></math></p>
+<p>JavaScriptでスコアと情報行列を計算し、ステップ幅を調整するNewton法で更新します。平均スコアの最大絶対値が10⁻⁸未満になったかを表示します。この教材の設計での数値検証を行い、一般の入力データへの推定ツール化は今後検討します。</p>
+<p>Berry（1994）につながる単純ロジットの関係は log(sⱼ) − log(s₀) = δⱼ です。市場規模から外部選択肢（outside option）のシェア s₀ を定めること、価格の内生性を扱うことが重要になります。このページで実行する推定は個人の選択データに対する最尤推定です。</p>
+</div>
+<h2 id="デモ">デモ</h2>
+<div id="demo-logit" class="demo">
+<p>JavaScriptを有効にすると、価格と品質のスライダーを操作できます。</p>
+</div>
+<div class="level-content" data-level="3">
+<div id="demo-mle" class="demo">
+<p>JavaScriptを有効にすると、架空データの最尤推定を実行できます。</p>
+</div>
+</div>
+<p><strong>試してみよう：</strong> Aの価格だけを上げて、販売数と利潤がどう動くかを説明しましょう。次にBの価格を変えて、Aにとって利潤の高い価格が動くかを調べます。品質の変更は、費用を80円に固定した条件での比較です。</p>
+<h2 id="学ぶ道筋科目">学ぶ道筋（科目）</h2>
+<p>入門ミクロの効用・需要・企業行動 → 統計学の確率と推定 → 計量経済学の識別と最尤法 → 産業組織の需要推定・価格競争へ。科目名は学ぶ分野の例です。</p>
+<h2 id="将来の仕事の例">将来の仕事の例</h2>
+<p>マーケティングの需要予測、商品設計、価格設定の分析、交通政策の選択予測、競争政策の分析など。モデルの予測と観測結果を比較し、仮定と不確実性を説明する力につながります。</p>
+<h2 id="ゼミでの取組み記録">ゼミでの取組み記録</h2>
+<p>実施後に追記する欄です。現時点の記録は空欄です。</p>
+<table>
+<thead>
+<tr>
+<th>実施日</th>
+<th>何をしたか</th>
+<th>学生の成果・公開可能な成果物</th>
+<th>次の問い</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="文献出典">文献・出典</h2>
+<p>以下はすべて <strong>AI作成・原典未確認</strong>。公開前に書誌情報・定式化・説明の対応を照合します。</p>
+<ul>
+<li>McFadden, D.（1974）, “Conditional Logit Analysis of Qualitative Choice Behavior.”</li>
+<li>Berry, S. T.（1994）, “Estimating Discrete-Choice Models of Product Differentiation.”</li>
+</ul>
+<p><a href="../fields/discrete-choice.html">離散選択の構想一覧へ</a> · <a href="../fields/empirical-micro.html">実証ミクロの構想一覧へ</a> · <a href="../index.html">トップへ</a></p>
+</article>
+</main>
+<footer class="site-footer"><div><strong>ミクロ経済学 応用事例集</strong><p>ミクロ経済学・ゲーム理論の資料集 · 磯貝 作成</p></div><div><p>作成中の資料 · 2026.10</p><p>最終更新 2026-10-30 · <a href="../../sources/ja/cases/discrete-choice-logit.md" download>このページのMarkdown</a></p><p>翻訳状態: draft</p><p>原稿・文献情報：AI作成・原典未確認 ／ データ：架空</p></div></footer>
+</body>
+</html>

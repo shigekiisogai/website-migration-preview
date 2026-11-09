@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Stable Matching and the Deferred Acceptance Algorithm | Applied Microeconomics</title>
+  <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script defer src="../../assets/language.js"></script>
+  <script defer src="../../assets/models.js"></script>
+  <script defer src="../../assets/i18n.js"></script>
+  <script defer src="../../assets/app.js"></script>
+</head>
+<body class="case-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span>Applied Microeconomics<small>MICROECONOMICS &amp; GAME THEORY · CASEBOOK</small></span></a>
+  <div class="header-links"><nav aria-label="Site navigation"><a href="../index.html#cases">Case catalogue</a><a href="../index.html#fields">Fields</a><a href="../about.html">About this casebook</a></nav>
+  <nav class="language-switch" aria-label="Choose a language"><a href="../../ja/cases/matching-da.html" data-language="ja" lang="ja" hreflang="ja">日本語</a> <span aria-hidden="true">｜</span> <a href="../../en/cases/matching-da.html" data-language="en" lang="en" hreflang="en" aria-current="page">English</a></nav></div>
+</header>
+<main id="main">
+  <div class="page-meta"><span>CASE 01 · Market design</span><span class="stage">Idea</span><span class="verification">AI-drafted, sources not yet verified</span></div>
+  
+  <div class="level-picker" role="group" aria-label="Reading level"><span class="picker-label">Reading level</span><button data-set-level="1" aria-pressed="true">★1 <span>Intuition</span></button><button data-set-level="2" aria-pressed="false">★2 <span>Model</span></button><button data-set-level="3" aria-pressed="false">★3 <span>Research</span></button></div>
+  <noscript><p class="notice">Enable JavaScript to use the demos. All reading levels are currently displayed.</p></noscript>
+  <article><h1 id="stable-matching-and-the-deferred-acceptance-algorithm">Stable Matching and the Deferred Acceptance Algorithm</h1><nav class="contents" aria-label="Contents"><p>Contents</p><ol><li><a href="#question">Question</a></li><li><a href="#overview">Overview</a></li><li><a href="#applications-medical-residency-matching-and-school-choice">Applications: medical residency matching and school choice</a></li><li><a href="#scope-and-limitations">Scope and limitations</a></li><li><a href="#model">Model</a></li><li><a href="#data-and-estimation">Data and estimation</a></li><li><a href="#demo">Demo</a></li><li><a href="#learning-path">Learning path</a></li><li><a href="#career-connections">Career connections</a></li><li><a href="#seminar-activity-record">Seminar activity record</a></li><li><a href="#references-and-sources">References and sources</a></li></ol></nav>
+<h2 id="question">Question</h2>
+<p><strong>Question: When students and institutions want the same partners, how should we match them?</strong></p>
+<h2 id="overview">Overview</h2>
+<div class="level-content" data-level="1">
+<p>Start by applying to your preferred partner. Each recipient tentatively holds its favorite proposal among those received. Anyone rejected moves on to their next choice. Repeating these steps is the core of deferred acceptance (DA).</p>
+</div>
+<div class="level-content" data-level="2">
+<p>DA finds a stable matching through repeated proposals and tentative acceptance. This page considers three students and three hospitals, with one position per hospital, strict preferences, and every potential partner acceptable to everyone.</p>
+</div>
+<div class="level-content" data-level="3">
+<p>Designing a matching system begins with preferences, capacities, priorities, and participation rules. We first examine the properties of basic DA, then consider the additional constraints in actual institutions. This prototype uses computational experiments; estimating the effects of a matching system is a topic for future work.</p>
+</div>
+<h2 id="applications-medical-residency-matching-and-school-choice">Applications: medical residency matching and school choice</h2>
+<p>Matching medical residents to hospitals and assigning students to schools are prominent applications of market design. We plan to read Gale–Shapley (1962) for the foundations of stable matching, Roth–Peranson (1999) for the design of the physician matching market, and Abdulkadiroğlu–Sönmez (2003) for school choice. <strong>Applications and references: AI-drafted, sources not yet verified.</strong></p>
+<h2 id="scope-and-limitations">Scope and limitations</h2>
+<p>In school choice, schools’ rankings represent institutional priorities. Actual residency systems have additional features, including multiple positions and couples. The experiment below is a one-to-one teaching model of the core DA procedure. Details of current systems will be checked against official materials before publication.</p>
+<h2 id="model">Model</h2>
+<div class="level-content" data-level="1">
+<p>If a student and a hospital each prefer one another to their current partners, they would both like to form a new pair. They constitute a blocking pair. Look for the red dashed lines in the demo.</p>
+<p>A stable matching has no blocking pairs. Switching the proposing side lets us compare whose interests are favored among the stable matchings.</p>
+</div>
+<div class="level-content" data-level="2">
+<p>Let μ denote a matching. A student s and hospital h form a blocking pair (s, h) if each prefers the other to their current partner. Being unmatched ranks below every partner.</p>
+<ul>
+<li>Each student and each hospital has at most one partner.</li>
+<li>A matching is stable if every matched partner is acceptable and there are no blocking pairs.</li>
+<li>Each proposer proposes to a given recipient at most once, so this example terminates after at most nine proposals.</li>
+<li>In the standard one-to-one model with strict preferences, student-proposing DA yields the student-optimal stable matching; hospital-proposing DA yields the hospital-optimal stable matching.</li>
+</ul>
+<p>Here, “optimal” refers to the set of stable matchings under the same preferences. Maximizing a numerical sum of satisfaction is a separate criterion.</p>
+</div>
+<div class="level-content" data-level="3">
+<p>The first tasks are to establish termination and stability under strict, complete preferences. A recipient’s tentative partner improves as the procedure progresses. A proposer rejected by a recipient they prefer to their eventual partner cannot form a blocking pair with that recipient at the end. Use this observation to construct a proof.</p>
+<p>Next, we will check the model and theorem assumptions for proposer optimality and strategy-proofness on the proposing side against the original sources. School priorities, capacities, ties, and couples require further examination of both the conditions and the algorithm.</p>
+</div>
+<h2 id="data-and-estimation">Data and estimation</h2>
+<p>All rankings are fictional teaching data. Student numbers 1–3 identify hypothetical agents. Enter each of 1, 2, and 3 exactly once in each row. Hold preferences fixed when comparing the proposing sides. The stability check examines all nine student–hospital pairs.</p>
+<div class="level-content" data-level="3">
+<p>Possible data for future empirical work include submitted rankings, capacities, assignments, and dates of institutional changes. We will consider when submitted rankings can be interpreted as true preferences, how participants select into the system, and what can be observed. This site contains no real individuals’ rankings or assignment records. The starting point is reproducible comparisons using public descriptions of institutions and fictional data.</p>
+</div>
+<h2 id="demo">Demo</h2>
+<div id="demo-da" class="demo">
+<p>Enable JavaScript to edit preferences and run the DA procedure.</p>
+</div>
+<p><strong>Try it:</strong> Run student-proposing DA to completion with the initial preferences, then compare it with hospital-proposing DA. Change student 1’s ranking and explain how the assignment and number of proposals change. Use “An unstable matching” to identify who would like to form a new pair.</p>
+<h2 id="learning-path">Learning path</h2>
+<p>Preferences and choice in introductory microeconomics → strategies and institutions in game theory → stability and incentives in market design → algorithm verification through programming. These are examples of subject areas; actual course offerings and prerequisites require separate confirmation.</p>
+<h2 id="career-connections">Career connections</h2>
+<p>Designing assignment and staffing systems, analyzing education policy, and allocating participants on platforms. Practical applications also require attention to fairness, operating costs, legal institutions, and participants’ acceptance of the system.</p>
+<h2 id="seminar-activity-record">Seminar activity record</h2>
+<p>Complete this section after an activity takes place. The record is currently blank.</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Activity</th>
+<th>Student outcomes / shareable work</th>
+<th>Next question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="references-and-sources">References and sources</h2>
+<p>All entries below are <strong>AI-drafted, sources not yet verified</strong>. Authors, years, titles, and the relevant passages will be checked before publication.</p>
+<ul>
+<li>Gale, D. and Shapley, L. S. (1962), “College Admissions and the Stability of Marriage.”</li>
+<li>Roth, A. E. and Peranson, E. (1999), “The Redesign of the Matching Market for American Physicians: Some Engineering Aspects of Economic Design.”</li>
+<li>Abdulkadiroğlu, A. and Sönmez, T. (2003), “School Choice: A Mechanism Design Approach.”</li>
+</ul>
+<p><a href="../fields/market-design.html">Market design ideas</a> · <a href="../index.html">Home</a></p>
+</article>
+</main>
+<footer class="site-footer"><div><strong>Applied Microeconomics</strong><p>A casebook in microeconomics and game theory · Prepared by Isogai</p></div><div><p>Materials in development · 2026.10</p><p>Updated 2026-10-30 · <a href="../../sources/en/cases/matching-da.md" download>Markdown source</a></p><p>Translation status: draft · Japanese source updated: 2026-10-30</p><p>Text and references: AI-drafted, sources not yet verified / Data: fictional</p></div></footer>
+</body>
+</html>

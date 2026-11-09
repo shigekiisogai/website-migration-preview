@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>立地選択と参入ゲーム | ミクロ経済学 応用事例集</title>
+  <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script defer src="../../assets/language.js"></script>
+  <script defer src="../../assets/models.js"></script>
+  <script defer src="../../assets/i18n.js"></script>
+  <script defer src="../../assets/app.js"></script>
+</head>
+<body class="case-page">
+<a class="skip" href="#main">本文へ</a>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span>ミクロ経済学 応用事例集<small>MICROECONOMICS &amp; GAME THEORY · CASEBOOK</small></span></a>
+  <div class="header-links"><nav aria-label="サイト"><a href="../index.html#cases">事例目録</a><a href="../index.html#fields">分野別目録</a><a href="../about.html">この資料集について</a></nav>
+  <nav class="language-switch" aria-label="言語を選ぶ"><a href="../../ja/cases/location-entry-game.html" data-language="ja" lang="ja" hreflang="ja" aria-current="page">日本語</a> <span aria-hidden="true">｜</span> <a href="../../en/cases/location-entry-game.html" data-language="en" lang="en" hreflang="en">English</a></nav></div>
+</header>
+<main id="main">
+  <div class="page-meta"><span>CASE 03 · 立地選択と参入ゲーム</span><span class="stage">構想</span><span class="verification">AI作成・原典未確認</span></div>
+  
+  <div class="level-picker" role="group" aria-label="読み方"><span class="picker-label">読み方</span><button data-set-level="1" aria-pressed="true">★1 <span>直感とビジュアル</span></button><button data-set-level="2" aria-pressed="false">★2 <span>簡単なモデル</span></button><button data-set-level="3" aria-pressed="false">★3 <span>論文と推定方法</span></button></div>
+  <noscript><p class="notice">JavaScriptを有効にするとデモを操作できます。現在はすべての難易度の本文を表示しています。</p></noscript>
+  <article><h1 id="立地選択と参入ゲーム">立地選択と参入ゲーム</h1><nav class="contents" aria-label="目次"><p>目次</p><ol><li><a href="#問い">問い</a></li><li><a href="#概要">概要</a></li><li><a href="#実例店舗数と地域の需要">実例：店舗数と地域の需要</a></li><li><a href="#適用範囲と限界">適用範囲と限界</a></li><li><a href="#モデル">モデル</a></li><li><a href="#データと推定">データと推定</a></li><li><a href="#デモ">デモ</a></li><li><a href="#学ぶ道筋科目">学ぶ道筋（科目）</a></li><li><a href="#将来の仕事の例">将来の仕事の例</a></li><li><a href="#ゼミでの取組み記録">ゼミでの取組み記録</a></li><li><a href="#文献出典">文献・出典</a></li></ol></nav>
+<h2 id="問い">問い</h2>
+<p><strong>問い：人口と競争相手の立地が変わると、どこに出店するのがよいでしょうか。</strong></p>
+<h2 id="概要">概要</h2>
+<div class="level-content" data-level="1">
+<p>店を出すと、近くに住む人が買いに来ます。相手の店が近ければ、お客さんを分け合います。人口が少ない街や出店費用の高い街では、「出店しない」という選択もあり得ます。架空の街に2社を置いて、選び直したくなるかを観察しましょう。</p>
+</div>
+<div class="level-content" data-level="2">
+<p>2社が同時に「出店しない／西／中央／東」のいずれかを選ぶ参入・立地ゲームです。各社は最大1店を持ち、相手の選択を固定したときに自分の利得を増やせる変更があるかを調べます。</p>
+</div>
+<div class="level-content" data-level="3">
+<p>立地と参入を同時に扱うと、店舗数だけを使う分析から、競争相手との距離や需要分布も使う分析へ進めます。このデモは完全情報の静学ゲームです。私的情報、複数均衡、未観測費用を含む実証モデルへの接続は、文献を確認してから検討します。</p>
+</div>
+<h2 id="実例店舗数と地域の需要">実例：店舗数と地域の需要</h2>
+<p>小売店やサービス業の出店では、商圏の人口、移動距離、競争、固定費用が関係します。Bresnahan–Reiss（1991）は市場規模・参入・競争の関係、Seim（2006）は参入と立地・製品タイプの選択を学ぶ文献として取り上げます。<strong>実例・文献説明はAI作成・原典未確認</strong>です。</p>
+<h2 id="適用範囲と限界">適用範囲と限界</h2>
+<p>コンビニは、これらの考え方を身近に試すための題材です。下の図と数値は全て架空です。両文献の実証対象・結果とこのコンビニ教材の対応は、原典確認の際に明確にします。</p>
+<h2 id="モデル">モデル</h2>
+<div class="level-content" data-level="1">
+<p>緑の丸がA社、橙の四角がB社です。住民は近い店に行き、同じ距離なら半分ずつに分かれます。どの店も遠ければ、この街の店では購入を見送ります。</p>
+<p>利得表の★は、「相手の場所がそのままなら、自社だけ選び直しても得をしない」組合せです。これをナッシュ均衡（Nash equilibrium）と呼びます。★が複数あれば、モデルが複数の結果を許しています。</p>
+</div>
+<div class="level-content" data-level="2">
+<p>各社の戦略（strategy）は、非参入・西・中央・東の4つです。各区画の住民は距離が最小の店舗に1単位の需要を持ちます。距離は縦横の移動数を合計し、2区画以内に店舗があれば購入します。同距離は等分します。同じ場所への出店も許します。</p>
+<p>店舗の売上数量を Dᵢ、自社と他社の選択を aᵢ, a₋ᵢ、固定費用を F とすると、単位当たり利幅を1教材単位として、参入時の利得（payoff）は Dᵢ(aᵢ, a₋ᵢ) − F、非参入時は0です。</p>
+<p>ナッシュ均衡では、すべての代替選択 aᵢ′ について次が成り立ちます。</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mi>i</mi></msub><mo>,</mo><msub><mi>a</mi><mrow><mi>−</mi><mi>i</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><msub><mi>π</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><msup><mi>i</mi><mo>′</mo></msup></msub><mo>,</mo><msub><mi>a</mi><mrow><mi>−</mi><mi>i</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\pi_i(a_i,a_{-i})\geq\pi_i(a_i&#39;,a_{-i}).</annotation></semantics></math></p>
+<p>探索するのは純粋戦略（pure strategy）の均衡です。全16通りを比較し、利得が同じ選択も最適な選択として含めます。</p>
+</div>
+<div class="level-content" data-level="3">
+<p>完全情報の利得表を全列挙する計算と、観測された店舗配置から未知の利得パラメータを推定する問題を順に学びます。実証では人口と未観測の需要要因の相関、地価などの費用要因、競争相手の存在、候補地集合を扱う必要があります。</p>
+<p>複数均衡があるモデルでは、1つの観測結果にどの均衡が対応するかという問題が生じます。均衡選択の仮定、不完備情報のモデル化、部分識別などが検討候補です。今回のデモは推定を行わず、既知の利得から純粋戦略均衡を列挙します。</p>
+</div>
+<h2 id="データと推定">データと推定</h2>
+<p>5×5の格子状の街を使います。座標 x, y は0〜4で、基準人口は各区画で 8 + 6 × (4 − |x−2| − |y−2|) 人、街全体で440人です。人口倍率を全区画に同じように掛けます。表示人口は四捨五入し、計算には丸め前の数値を使います。企業・住民・人口・費用はすべて架空です。</p>
+<p>候補地は西 (0, 2)、中央 (2, 2)、東 (4, 2) です。価格、商品の違い、道路の制約、複数店舗の企業内調整、時間を通じた退出は省略しています。</p>
+<div class="level-content" data-level="3">
+<p>将来は <strong>e-Statの地域メッシュ統計</strong> と <strong>国土数値情報</strong> を候補に、人口分布や交通・土地利用をGISで可視化する計画です。今回は取得・利用していません。データを使う前に、提供主体、年度、メッシュ粒度、座標参照系、利用条件・ライセンス、出典表記、再配布の可否をデータごとに確認します。店舗位置の情報源と利用条件も別途選定します。</p>
+<p>人口と店舗数の関係を見るときは、市場の境界、隣接市場への移動、人口の内生的な変化も検討します。単純な相関を競争効果の推定に読み替えるには、追加の仮定とデータが必要です。</p>
+</div>
+<h2 id="デモ">デモ</h2>
+<div id="demo-location" class="demo">
+<p>JavaScriptを有効にすると、2社の出店位置と人口・費用を操作できます。</p>
+</div>
+<p><strong>試してみよう：</strong> 人口倍率を0.5倍から3倍に動かし、均衡の出店数を観察します。次に固定費用を変えて、1店目と2店目が成立する人口の範囲を比べましょう。</p>
+<div class="level-content" data-level="1">
+<p>人口が増えると販売機会が増え、費用を回収できる店の数も変わります。2店目が入ると既存店と需要を分け合うので、「1店を支える人口」と「2店を支える人口」の関係には競争が関わります。これがBresnahan–Reissの分析へ進む入口になります。</p>
+</div>
+<div class="level-content" data-level="2">
+<p>人口と店舗数の関係は、需要の分け方・商圏・費用に依存します。本デモでは到達距離が限られるため、新しい店が、それまで購入していなかった住民を取り込むこともあります。人口の閾値を読む際は、需要の拡大と競争による分割を区別して説明します。</p>
+</div>
+<div class="level-content" data-level="3">
+<p>Bresnahan–Reissを読む際は、企業数に応じた参入閾値や1社当たりに必要な市場規模を、原典の需要・費用・市場の仮定と結びつけて確認します。このデモの人口・均衡の図は、その論文の推定モデルや実証結果の再現には相当しません。Seimを読む際は、立地の違いと私的情報の役割を整理する予定です。</p>
+</div>
+<h2 id="学ぶ道筋科目">学ぶ道筋（科目）</h2>
+<p>入門ミクロの企業行動 → ゲーム理論のナッシュ均衡 → 産業組織の参入と競争 → 計量経済学・GISの空間データ分析へ。科目名は学ぶ分野の例です。</p>
+<h2 id="将来の仕事の例">将来の仕事の例</h2>
+<p>店舗開発の商圏分析、地域のサービス供給の検討、都市政策、競争政策など。人口地図と競争のモデルを組み合わせ、立地の候補と判断の条件を説明する仕事につながります。</p>
+<h2 id="ゼミでの取組み記録">ゼミでの取組み記録</h2>
+<p>実施後に追記する欄です。現時点の記録は空欄です。</p>
+<table>
+<thead>
+<tr>
+<th>実施日</th>
+<th>何をしたか</th>
+<th>学生の成果・公開可能な成果物</th>
+<th>次の問い</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="文献出典">文献・出典</h2>
+<p>以下はすべて <strong>AI作成・原典未確認</strong>。公開前に本文・実証対象・仮定を照合します。</p>
+<ul>
+<li>Bresnahan, T. F. and Reiss, P. C.（1991）, “Entry and Competition in Concentrated Markets.”</li>
+<li>Seim, K.（2006）, “An Empirical Model of Firm Entry with Endogenous Product-Type Choices.”</li>
+<li>将来のデータ候補：e-Stat 地域メッシュ統計、国土数値情報。採用するデータセット・年次・利用条件は未確定。</li>
+</ul>
+<p><a href="../fields/location.html">立地選択の構想一覧へ</a> · <a href="../index.html">トップへ</a></p>
+</article>
+</main>
+<footer class="site-footer"><div><strong>ミクロ経済学 応用事例集</strong><p>ミクロ経済学・ゲーム理論の資料集 · 磯貝 作成</p></div><div><p>作成中の資料 · 2026.10</p><p>最終更新 2026-10-30 · <a href="../../sources/ja/cases/location-entry-game.md" download>このページのMarkdown</a></p><p>翻訳状態: draft</p><p>原稿・文献情報：AI作成・原典未確認 ／ データ：架空</p></div></footer>
+</body>
+</html>

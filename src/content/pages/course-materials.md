@@ -5,6 +5,13 @@ source: "https://shigekiisogai.wordpress.com/%E8%AC%9B%E7%BE%A9%E8%B3%87%E6%96%9
 lang: "ja"
 ---
 
+## 自習用教材 / Self-study materials
+
+- [ミクロ経済学 応用事例集（日本語・English）](/teaching/applied-micro/)
+- [インタラクティブ教材 / Interactive Microeconomics](/teaching/interactive/)
+
+
+
 ミクロ経済学関係の講義資料を共有しています。
 
 This page lists course materials in Microeconomics courses.
@@ -40,7 +47,7 @@ The lecture notes aim to introduce microeconomics with readers of various backgr
 <a href="https://drive.google.com/file/d/1dx38qiGsn8UlhuvhwdWWJoQYDWqpum_C/view?usp=sharing" target="_blank" rel="noreferrer noopener">Microeconomics</a>
 
 <strong>Interactive materials:</strong>  
-<strong><a href="https://sisogai.github.io/teaching/index.html" target="_blank" rel="noopener">Interactive Visualizations (Prototype)</a></strong>
+<strong><a href="/teaching/interactive/" target="_blank" rel="noopener">Interactive Visualizations (Prototype)</a></strong>
 
 <strong>Problem sets and solutions (English):</strong>  
 <a href="https://drive.google.com/file/d/1QTHd1B04EECkH8JKAL-wJAVcFsUKKz3M/view?usp=sharing" target="_blank" rel="noreferrer noopener">Problem Sets</a>  

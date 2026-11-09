@@ -6,6 +6,7 @@ export function rewriteLink(href,base='/') {
  let url;try{url=new URL(href,sourceOrigin);}catch{return href;}
  if(url.origin!==sourceOrigin)return href;
  const route=decodeURIComponent(url.pathname);
+ if(route.startsWith('/teaching/applied-micro/')||route.startsWith('/teaching/interactive/'))return withBase(route,base)+url.search+url.hash;
  if(!routes.some(p=>p.route===route))return href;
  return withBase(route,base)+url.search+url.hash;
 }

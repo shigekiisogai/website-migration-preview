@@ -5,6 +5,13 @@ source: "https://shigekiisogai.wordpress.com/teaching/"
 lang: "en"
 ---
 
+## 自習用教材 / Self-study materials
+
+- [ミクロ経済学 応用事例集（日本語・English）](/teaching/applied-micro/)
+- [インタラクティブ教材 / Interactive Microeconomics](/teaching/interactive/)
+
+
+
 ## 2026 Spring
 
 Microeconomics I  

@@ -1,0 +1,18 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import {withBase} from '../../../lib/paths.mjs';
+const base=import.meta.env.BASE_URL;
+const root='/teaching/applied-micro/';
+---
+<Layout title="ミクロ経済学 応用事例集 / Applied Microeconomics: A Casebook" lang="ja" route={root} scriptsAllowed>
+ <script slot="head" is:inline defer src={withBase(root+'assets/language.js',base)}></script>
+ <p>ミクロ経済学・ゲーム理論の応用事例を集めた資料集です。日本語・英語で読めます。</p>
+ <div data-language-entry="true">
+  <nav aria-label="言語を選ぶ / Choose a language">
+   <a href={withBase(root+'ja/',base)} data-language="ja" lang="ja" hreflang="ja">日本語</a> ｜ <a href={withBase(root+'en/',base)} data-language="en" lang="en" hreflang="en">English</a>
+  </nav>
+ </div>
+ <p>保存した言語、初回はブラウザーの優先言語で開きます。各言語へのリンクからも直接開けます。</p>
+ <p>AI作成・原典未確認 / <span lang="en">AI-drafted, sources not yet verified</span></p>
+ <p><a href={withBase('/teaching/',base)}>Teaching / 授業</a> · <a href={withBase('/teaching/interactive/',base)}>Interactive materials / インタラクティブ教材</a></p>
+</Layout>

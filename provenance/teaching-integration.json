@@ -1,0 +1,87 @@
+{
+  "applied": {
+    "description": "Local casebook a3, 2026-10-30; Japanese source and draft English translation",
+    "files": {
+      "ja/about.html": "e94ae22221969335dc30a9398efe60f192908836e2b2ba5ea87ea7011d8b813d",
+      "ja/cases/discrete-choice-logit.html": "368f1b19279ed7af13a0b2d33b5c83f00c46f4597958c093a9ec29d5c2ac384c",
+      "ja/cases/location-entry-game.html": "6aa7f86d0b9f10534f5972aa4725ac33163458d11c298cc4e60f03831726fc7c",
+      "ja/cases/matching-da.html": "763a6103cdad29df83702c13e10db28fde6d1d4dcb485f98064fd5921f9212ec",
+      "ja/fields/business.html": "2918b96ba33b6bdbb2edf0376f4bcc2ce6210cc5c955a6a5f39f826b228a66b6",
+      "ja/fields/discrete-choice.html": "fe073836d0f663d3000ee72998ac7b99f4708817ebcd795297532233309efe4d",
+      "ja/fields/empirical-micro.html": "167771deb22e71095c728b156387f3aaa3a3c5c2d596c71f44872e8c4a28cec4",
+      "ja/fields/information.html": "896b39b70d8b300c065aabf135e0367fe388f7febfbdfc5839a56f7453ff5b8a",
+      "ja/fields/location.html": "a8e095813074b41776d3b97d8f770e141f0eb31470e0974b17a014a676f5ac74",
+      "ja/fields/market-design.html": "c57d53e6977f8d12cf7e8f6f4bd6dc0481598f09c2de3ef6c61f2a0e3a119547",
+      "ja/index.html": "b84228bde18152a6e3d6bfef46a1421d09744f8d1b9d47a010c138e8d8cec5f5",
+      "en/about.html": "96406ddca318fd804e4fc54e704ff9b4f8f0e0b8e0bc4608ecc21618c055a41f",
+      "en/cases/discrete-choice-logit.html": "f2e848fd82eb5f1c44a3c04cc89e0ee997a76c4976cda3c104e262d65ff024fb",
+      "en/cases/location-entry-game.html": "cbb46c0d78355cc1d3cf303152a366042492ee657f00203ef42a489a31e9b7a0",
+      "en/cases/matching-da.html": "3a750d73f174f420755d1c7b51425162ae7f90523e92e6bc9032697c044ac73b",
+      "en/fields/business.html": "54091b04d98510cca38f7b695c3426bb7841834fce12c01cf047d1af62c1b583",
+      "en/fields/discrete-choice.html": "d2f6c30e87fd8a952cc2b5066b79251bb84021222427f7db2035dbe46f414109",
+      "en/fields/empirical-micro.html": "25f1118484ba2607b1e4de7c26b124543741e74d0e2167b0f9a86f54f1543aa8",
+      "en/fields/information.html": "8cf446629aa85f61a4b03e1aed31191f2390655bfbf7782b3043cd329f58e6dd",
+      "en/fields/location.html": "f08cc77507c0a8198334ed91805673e2ac094af1ae521c367a4d629ccfd45fe1",
+      "en/fields/market-design.html": "52c36f7a3aee90b3c26c7c786b272c46b2b719ea62315c9bbac80fb89ef66498",
+      "en/index.html": "394b31250f9ba9f9c3a820a0fe2fcee86b905130abcd72ae0dc58c611d7c08b1"
+    },
+    "assets": {
+      "app.js": "3ef913e6a62634d5a0da5522d251b37e5d7205cf1cdb4a2fdc76cf95a75f2898",
+      "models.js": "521980552409384348666cee7510091161267685001f83c324e2b4f1542090af",
+      "i18n.js": "21ed37ca4681b91f3000e465c0fcc0c6c4c50bd096b3c812c1d1c4fae293b88f",
+      "language.js": "207cb73aba419258b2f38deb1d4b46a2f72d7cecf86e625ddd7c52bf2decf277"
+    }
+  },
+  "interactive": {
+    "repository": "https://github.com/sisogai/teaching",
+    "commit": "eb7fa3a9ddec725f86f3ceae94348f6a55405cb2",
+    "files": {
+      "index.html": "fc976634cd41eef0a8353070350584e48972450ca9230a30b836a573864f5f77",
+      "micro_chapter1_introduction.html": "85ba5a0d5022cd3c3b98139941e43599da9778bd5de5380838920bf33b71c360",
+      "micro_chapter2_economy_markets.html": "ce894183bc242da4a73949796b12ee2b2d02216f70bdb50f7179c1bba0e350a3",
+      "micro_chapter3_producer_theory.html": "7e0298bc6569b0ec593faf8b5aac35be9f551a024fefd0860275d85948b58557",
+      "micro_chapter4_consumer_theory.html": "78ee5e9f3e276fa56650cf9b5e4a4f4b0577aec149433d11233bf2d85f85cd89",
+      "micro_chapter5_partial_equilibrium.html": "cc6dca4fe8f2bbf28d88c22e8dc654300868ecddc64859baf173d398d4e84380",
+      "micro_chapter6_general_equilibrium.html": "ed23537df8b296526389724ee399862b0bb37b313d62cdb61a33f97fc10a3d49",
+      "micro_chapter7_market_failure.html": "fc7a78d81e9fd7d5f515c5ce08c04bba19cfb23428a03542bae06d8e06a91721"
+    },
+    "inlineScripts": {
+      "index.html": [],
+      "micro_chapter1_introduction.html": [
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "866ddeccd9fd4c6bc2fa4ef392055bc072cc53acfe2ea8ce5a1102b6d162eb5a"
+      ],
+      "micro_chapter2_economy_markets.html": [
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "1674db4870571d67bdcb0512aa6fe4c1c7a23dc4365fc4f945c0bdaeded02ad5"
+      ],
+      "micro_chapter3_producer_theory.html": [
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "3b3407dfc50cb4ddae8ad355b7687d75516903bf564b8ef261118a70706fb210"
+      ],
+      "micro_chapter4_consumer_theory.html": [
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "2f9e256f0087b684aeebb8ac20fbf861463cc31fb8125f7eddcf0785dbb1e027"
+      ],
+      "micro_chapter5_partial_equilibrium.html": [
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dd1e14d08ddf30b6c8328d99db52d860c06adee10a581408afa87b5a05b83222"
+      ],
+      "micro_chapter6_general_equilibrium.html": [
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "1c19966f167a27171bff9b567e7809cf4ae2d59d10a190351eefe9d13fb8fc26"
+      ],
+      "micro_chapter7_market_failure.html": [
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "ee78f8edda792828d7d072c79b2fa82efd77ce51940bbfc06b345ff189fc414d"
+      ]
+    }
+  }
+}

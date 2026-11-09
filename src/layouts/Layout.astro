@@ -2,7 +2,7 @@
 import '../styles/site.css';
 import routes from '../lib/routes.json';
 import {withBase} from '../lib/paths.mjs';
-const {title, lang='en',route='/',source}=Astro.props;
+const {title, lang='en',route='/',source,scriptsAllowed=false}=Astro.props;
 const base=import.meta.env.BASE_URL;
 const menu=['research','teaching','course-materials','advising','japanese'].map(id=>({...routes.find(p=>p.id===id)!,label:id==='japanese'?'日本語での情報':routes.find(p=>p.id===id)!.title}));
 ---
@@ -12,6 +12,8 @@ const menu=['research','teaching','course-materials','advising','japanese'].map(
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta http-equiv="Content-Security-Policy" content={`default-src 'self'; script-src ${scriptsAllowed?"'self'":"'none'"}; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'`} />
+  <slot name="head" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>{title} – Shigeki ISOGAI</title>
  </head>

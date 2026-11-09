@@ -5,6 +5,13 @@ source: "https://shigekiisogai.wordpress.com/%E6%97%A5%E6%9C%AC%E8%AA%9E/"
 lang: "ja"
 ---
 
+## 自習用教材 / Self-study materials
+
+- [ミクロ経済学 応用事例集（日本語・English）](/teaching/applied-micro/)
+- [インタラクティブ教材 / Interactive Microeconomics](/teaching/interactive/)
+
+
+
 現在の所属：兵庫県立大学国際商経学部准教授
 
 <strong>研究の興味</strong>はミクロ経済学・ゲーム理論で，特に現在は合理化可能性の観点からゲームにおける妥当な帰結を分析し，均衡概念では説明しにくい現象を説明することに興味を持っています．主な応用先はカルテル・談合の分析です．

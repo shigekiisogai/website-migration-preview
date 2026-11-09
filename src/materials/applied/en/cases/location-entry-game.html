@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Location Choice and Entry Games | Applied Microeconomics</title>
+  <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script defer src="../../assets/language.js"></script>
+  <script defer src="../../assets/models.js"></script>
+  <script defer src="../../assets/i18n.js"></script>
+  <script defer src="../../assets/app.js"></script>
+</head>
+<body class="case-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span>Applied Microeconomics<small>MICROECONOMICS &amp; GAME THEORY · CASEBOOK</small></span></a>
+  <div class="header-links"><nav aria-label="Site navigation"><a href="../index.html#cases">Case catalogue</a><a href="../index.html#fields">Fields</a><a href="../about.html">About this casebook</a></nav>
+  <nav class="language-switch" aria-label="Choose a language"><a href="../../ja/cases/location-entry-game.html" data-language="ja" lang="ja" hreflang="ja">日本語</a> <span aria-hidden="true">｜</span> <a href="../../en/cases/location-entry-game.html" data-language="en" lang="en" hreflang="en" aria-current="page">English</a></nav></div>
+</header>
+<main id="main">
+  <div class="page-meta"><span>CASE 03 · Location choice and entry games</span><span class="stage">Idea</span><span class="verification">AI-drafted, sources not yet verified</span></div>
+  
+  <div class="level-picker" role="group" aria-label="Reading level"><span class="picker-label">Reading level</span><button data-set-level="1" aria-pressed="true">★1 <span>Intuition</span></button><button data-set-level="2" aria-pressed="false">★2 <span>Model</span></button><button data-set-level="3" aria-pressed="false">★3 <span>Research</span></button></div>
+  <noscript><p class="notice">Enable JavaScript to use the demos. All reading levels are currently displayed.</p></noscript>
+  <article><h1 id="location-choice-and-entry-games">Location Choice and Entry Games</h1><nav class="contents" aria-label="Contents"><p>Contents</p><ol><li><a href="#question">Question</a></li><li><a href="#overview">Overview</a></li><li><a href="#applications-store-counts-and-local-demand">Applications: store counts and local demand</a></li><li><a href="#scope-and-limitations">Scope and limitations</a></li><li><a href="#model">Model</a></li><li><a href="#data-and-estimation">Data and estimation</a></li><li><a href="#demo">Demo</a></li><li><a href="#learning-path">Learning path</a></li><li><a href="#career-connections">Career connections</a></li><li><a href="#seminar-activity-record">Seminar activity record</a></li><li><a href="#references-and-sources">References and sources</a></li></ol></nav>
+<h2 id="question">Question</h2>
+<p><strong>Question: Where should a firm open a store when population and a competitor’s location change?</strong></p>
+<h2 id="overview">Overview</h2>
+<div class="level-content" data-level="1">
+<p>A store attracts nearby residents. If a rival opens nearby, the stores share customers. In a town with few residents or high entry costs, staying out may be an option. Place two firms in a fictional town and see whether either would like to change its choice.</p>
+</div>
+<div class="level-content" data-level="2">
+<p>This is an entry and location game in which two firms simultaneously choose among staying out, West, Center, and East. Each firm operates at most one store. We ask whether it can improve its payoff by changing its own choice while holding its rival’s choice fixed.</p>
+</div>
+<div class="level-content" data-level="3">
+<p>Jointly modeling entry and location takes us from store counts to the distances between competitors and the distribution of demand. This demo is a static game of complete information. Connections to empirical models with private information, multiple equilibria, and unobserved costs will be considered after checking the literature.</p>
+</div>
+<h2 id="applications-store-counts-and-local-demand">Applications: store counts and local demand</h2>
+<p>Entry in retail and services depends on local population, travel distances, competition, and fixed costs. We introduce Bresnahan–Reiss (1991) for the relationship between market size, entry, and competition, and Seim (2006) for entry and location or product-type choice. <strong>Applications and references: AI-drafted, sources not yet verified.</strong></p>
+<h2 id="scope-and-limitations">Scope and limitations</h2>
+<p>Convenience stores provide a familiar setting for exploring these ideas. All diagrams and numbers below are fictional. The relationship between this teaching example and the empirical settings and findings of the two papers will be clarified when the original sources are checked.</p>
+<h2 id="model">Model</h2>
+<div class="level-content" data-level="1">
+<p>The green circle represents firm A; the orange square represents firm B. Residents choose the nearer store and split equally when distances are tied. If all stores are too far away, they buy from neither store in this town.</p>
+<p>A ★ in the payoff table marks a pair of choices where neither firm can gain by changing its own choice while its rival stays put. This is a Nash equilibrium. Multiple stars mean the model permits multiple outcomes.</p>
+</div>
+<div class="level-content" data-level="2">
+<p>Each firm’s strategies are Stay out, West, Center, and East. Each resident demands one unit from the nearest store, provided it is within two grid steps. Distance is the sum of horizontal and vertical steps. Tied demand is shared equally. Both firms may choose the same location.</p>
+<p>Let store sales be Dᵢ, own and rival choices be aᵢ and a₋ᵢ, and fixed cost be F. With a unit margin of one teaching unit, the payoff from entry is Dᵢ(aᵢ, a₋ᵢ) − F; staying out yields zero.</p>
+<p>At a Nash equilibrium, the following holds for every alternative choice aᵢ′:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mi>i</mi></msub><mo>,</mo><msub><mi>a</mi><mrow><mi>−</mi><mi>i</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><msub><mi>π</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><msup><mi>i</mi><mo>′</mo></msup></msub><mo>,</mo><msub><mi>a</mi><mrow><mi>−</mi><mi>i</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\pi_i(a_i,a_{-i})\geq\pi_i(a_i&#39;,a_{-i}).</annotation></semantics></math></p>
+<p>We search for pure-strategy equilibria. All 16 choice pairs are compared, and ties in payoffs are included among optimal choices.</p>
+</div>
+<div class="level-content" data-level="3">
+<p>We first enumerate a complete-information payoff table, then consider the problem of estimating unknown payoff parameters from observed store locations. Empirical work must address correlations between population and unobserved demand, cost factors such as land prices, competitors’ presence, and the set of candidate locations.</p>
+<p>With multiple equilibria, an observed outcome raises the question of which equilibrium generated it. Possible approaches include equilibrium selection assumptions, incomplete-information models, and partial identification. This demo enumerates pure-strategy equilibria from known payoffs; it performs no estimation.</p>
+</div>
+<h2 id="data-and-estimation">Data and estimation</h2>
+<p>The town is a 5×5 grid. Coordinates x and y run from 0 to 4. Baseline population in each cell is 8 + 6 × (4 − |x−2| − |y−2|), totaling 440 residents. A common population multiplier applies to every cell. Displayed populations are rounded; calculations use unrounded values. Firms, residents, population, and costs are all fictional.</p>
+<p>Candidate locations are West (0, 2), Center (2, 2), and East (4, 2). The model abstracts from prices, product differences, road constraints, coordination among a firm’s multiple stores, and exit over time.</p>
+<div class="level-content" data-level="3">
+<p>Future plans include using <strong>e-Stat regional mesh statistics</strong> and <strong>National Land Numerical Information</strong> as possible sources for GIS displays of population, transport, and land use. These data have not been acquired or used here. Before use, we will check each dataset’s provider, year, grid resolution, coordinate reference system, terms and license, attribution requirements, and redistribution permissions. Sources and terms for store locations will be selected separately.</p>
+<p>Analyzing population and store counts also requires considering market boundaries, travel to neighboring markets, and endogenous population changes. Interpreting a simple correlation as an estimate of a competition effect requires additional assumptions and data.</p>
+</div>
+<h2 id="demo">Demo</h2>
+<div id="demo-location" class="demo">
+<p>Enable JavaScript to change store locations, population, and costs.</p>
+</div>
+<p><strong>Try it:</strong> Move the population multiplier from 0.5 to 3 and observe the equilibrium number of stores. Then vary fixed costs and compare the population ranges that support the first and second stores.</p>
+<div class="level-content" data-level="1">
+<p>A larger population creates more sales opportunities and can change how many stores cover their costs. A second store shares demand with the existing store, so competition affects the relationship between the populations needed to support one and two stores. This provides an entry point to Bresnahan–Reiss.</p>
+</div>
+<div class="level-content" data-level="2">
+<p>The relationship between population and store counts depends on demand allocation, catchment areas, and costs. Because travel distance is limited here, a new store can also reach residents who previously bought from neither store. When interpreting population thresholds, distinguish demand expansion from the division of demand through competition.</p>
+</div>
+<div class="level-content" data-level="3">
+<p>When reading Bresnahan–Reiss, we will connect entry thresholds and the market size required per firm to the original assumptions about demand, costs, and markets. This demo’s population–equilibrium graph is not a replication of that paper’s estimated model or empirical findings. When reading Seim, we plan to examine the roles of location differences and private information.</p>
+</div>
+<h2 id="learning-path">Learning path</h2>
+<p>Firm behavior in introductory microeconomics → Nash equilibrium in game theory → entry and competition in industrial organization → spatial data analysis in econometrics and GIS. These are examples of subject areas.</p>
+<h2 id="career-connections">Career connections</h2>
+<p>Catchment-area analysis for store development, local service provision, urban policy, and competition policy. Combining population maps with models of competition helps explain candidate locations and the conditions relevant to a decision.</p>
+<h2 id="seminar-activity-record">Seminar activity record</h2>
+<p>Complete this section after an activity takes place. The record is currently blank.</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Activity</th>
+<th>Student outcomes / shareable work</th>
+<th>Next question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="references-and-sources">References and sources</h2>
+<p>All entries below are <strong>AI-drafted, sources not yet verified</strong>. The original text, empirical settings, and assumptions will be checked before publication.</p>
+<ul>
+<li>Bresnahan, T. F. and Reiss, P. C. (1991), “Entry and Competition in Concentrated Markets.”</li>
+<li>Seim, K. (2006), “An Empirical Model of Firm Entry with Endogenous Product-Type Choices.”</li>
+<li>Possible future data: e-Stat regional mesh statistics and National Land Numerical Information. Specific datasets, years, and terms of use remain to be determined.</li>
+</ul>
+<p><a href="../fields/location.html">Location choice ideas</a> · <a href="../index.html">Home</a></p>
+</article>
+</main>
+<footer class="site-footer"><div><strong>Applied Microeconomics</strong><p>A casebook in microeconomics and game theory · Prepared by Isogai</p></div><div><p>Materials in development · 2026.10</p><p>Updated 2026-10-30 · <a href="../../sources/en/cases/location-entry-game.md" download>Markdown source</a></p><p>Translation status: draft · Japanese source updated: 2026-10-30</p><p>Text and references: AI-drafted, sources not yet verified / Data: fictional</p></div></footer>
+</body>
+</html>

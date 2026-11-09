@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Demand Prediction and Estimation with Discrete Choice Models | Applied Microeconomics</title>
+  <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script defer src="../../assets/language.js"></script>
+  <script defer src="../../assets/models.js"></script>
+  <script defer src="../../assets/i18n.js"></script>
+  <script defer src="../../assets/app.js"></script>
+</head>
+<body class="case-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span>Applied Microeconomics<small>MICROECONOMICS &amp; GAME THEORY · CASEBOOK</small></span></a>
+  <div class="header-links"><nav aria-label="Site navigation"><a href="../index.html#cases">Case catalogue</a><a href="../index.html#fields">Fields</a><a href="../about.html">About this casebook</a></nav>
+  <nav class="language-switch" aria-label="Choose a language"><a href="../../ja/cases/discrete-choice-logit.html" data-language="ja" lang="ja" hreflang="ja">日本語</a> <span aria-hidden="true">｜</span> <a href="../../en/cases/discrete-choice-logit.html" data-language="en" lang="en" hreflang="en" aria-current="page">English</a></nav></div>
+</header>
+<main id="main">
+  <div class="page-meta"><span>CASE 02 · Discrete choice and marketing</span><span class="stage">Idea</span><span class="verification">AI-drafted, sources not yet verified</span></div>
+  
+  <div class="level-picker" role="group" aria-label="Reading level"><span class="picker-label">Reading level</span><button data-set-level="1" aria-pressed="true">★1 <span>Intuition</span></button><button data-set-level="2" aria-pressed="false">★2 <span>Model</span></button><button data-set-level="3" aria-pressed="false">★3 <span>Research</span></button></div>
+  <noscript><p class="notice">Enable JavaScript to use the demos. All reading levels are currently displayed.</p></noscript>
+  <article><h1 id="demand-prediction-and-estimation-with-discrete-choice-models">Demand Prediction and Estimation with Discrete Choice Models</h1><nav class="contents" aria-label="Contents"><p>Contents</p><ol><li><a href="#question">Question</a></li><li><a href="#overview">Overview</a></li><li><a href="#applications-analyzing-product-choice">Applications: analyzing product choice</a></li><li><a href="#scope-and-limitations">Scope and limitations</a></li><li><a href="#model">Model</a></li><li><a href="#data-and-estimation">Data and estimation</a></li><li><a href="#demo">Demo</a></li><li><a href="#learning-path">Learning path</a></li><li><a href="#career-connections">Career connections</a></li><li><a href="#seminar-activity-record">Seminar activity record</a></li><li><a href="#references-and-sources">References and sources</a></li></ol></nav>
+<h2 id="question">Question</h2>
+<p><strong>Question: How does a price increase affect sales and profit?</strong></p>
+<h2 id="overview">Overview</h2>
+<div class="level-content" data-level="1">
+<p>Consumers choose between drink A, drink B, and buying neither. Raising A’s price reduces the share choosing A but increases the margin on each unit sold. Use the sliders to compare these two effects.</p>
+</div>
+<div class="level-content" data-level="2">
+<p>We express utility in terms of price and quality, then calculate choice probabilities using a multinomial logit model. In a hypothetical market where 1,000 people each choose once and share the same coefficients on attributes, these probabilities are predicted market shares.</p>
+</div>
+<div class="level-content" data-level="3">
+<p>Estimate coefficients from individual choices and use them to predict demand after a price change. We distinguish maximum likelihood estimation with individual data from demand estimation using aggregate shares, paying attention to the unit of observation and identification assumptions.</p>
+</div>
+<h2 id="applications-analyzing-product-choice">Applications: analyzing product choice</h2>
+<p>Transport mode choice and product choice are applications of discrete choice models. We introduce McFadden (1974) as a starting point for conditional logit and Berry (1994) as an introduction to demand analysis using market shares of differentiated products. <strong>Applications and references: AI-drafted, sources not yet verified.</strong></p>
+<h2 id="scope-and-limitations">Scope and limitations</h2>
+<p>This is a fictional drinks market with no numerical data from actual products, firms, or consumers. Using estimated coefficients or sales forecasts for business decisions requires data from the relevant market and validation of the assumptions.</p>
+<h2 id="model">Model</h2>
+<div class="level-content" data-level="1">
+<p>In this model, lower prices and higher quality make a product more likely to be chosen. The option to buy neither means that, when both products become more expensive, more people forgo purchasing.</p>
+<p>If each of 1,000 people chooses A with probability 30%, predicted sales of A are 300 units. Profit is the price–unit cost margin multiplied by sales. This experiment abstracts from the additional costs of improving quality.</p>
+</div>
+<div class="level-content" data-level="2">
+<p>Price p is measured in yen; quality q is a teaching index from 0 to 5. The observable utility of product j is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>j</mi></msub><mo>=</mo><mi>−</mi><mn>1.2</mn><mfrac><msub><mi>p</mi><mi>j</mi></msub><mn>100</mn></mfrac><mo>+</mo><mn>0.9</mn><msub><mi>q</mi><mi>j</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>V</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">V_j = -1.2\frac{p_j}{100}+0.9q_j,\qquad V_0=0.</annotation></semantics></math></p>
+<p>Option 0 denotes buying neither. Assume that the errors in individual utility Uᵢⱼ = Vⱼ + εᵢⱼ are independent and identically distributed standard type-I extreme value variables. Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>j</mi></msub><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>V</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mn>1</mn><mo>+</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>V</mi><mi>A</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>V</mi><mi>B</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>P</mi><mn>0</mn></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>V</mi><mi>A</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>V</mi><mi>B</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">P_j=\frac{\exp(V_j)}{1+\exp(V_A)+\exp(V_B)},\qquad P_0=\frac{1}{1+\exp(V_A)+\exp(V_B)}.</annotation></semantics></math></p>
+<p>With market size M = 1,000, unit cost c = 80 yen, and zero fixed costs,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>j</mi></msub><mo>=</mo><mi>M</mi><msub><mi>P</mi><mi>j</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>π</mi><mi>j</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mi>j</mi></msub><mo>−</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mi>M</mi><msub><mi>P</mi><mi>j</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">Q_j=MP_j,\qquad \pi_j=(p_j-c)MP_j.</annotation></semantics></math></p>
+<p>These coefficient values are assumed. The price coefficient −1.2 measures the change in utility per 100 yen. Own-price elasticity is −1.2(pⱼ/100)(1−Pⱼ), so it also depends on price and market share.</p>
+</div>
+<div class="level-content" data-level="3">
+<p>After normalizing utility levels and the scale of the errors, coefficients are identified from utility differences across alternatives. In conditional logit with common coefficients, a term shared by every alternative in a choice set cancels out. The attribute vector for buying neither is (0, 0) in this demo.</p>
+<p>Independence of irrelevant alternatives (IIA) in standard logit requires that the ratio of the choice probabilities of two alternatives be independent of the attributes of other alternatives. Extensions such as nested logit and mixed logit can capture substitution toward similar products and differences in preferences across people.</p>
+<p>Observed prices may be correlated with unobserved quality or demand shocks. To discuss the causal effect of price changes, consider price endogeneity and identification strategies such as instrumental variables. Here we use fictional data with exogenously generated prices and quality.</p>
+</div>
+<h2 id="data-and-estimation">Data and estimation</h2>
+<p>Slider values, market size, and costs are teaching assumptions. Shares use all 1,000 potential consumers, including those who buy neither, as the denominator. The three unrounded probabilities sum to one. Moving a slider recalculates predictions under the same coefficients.</p>
+<div class="level-content" data-level="3">
+<p>In the estimation experiment, 1,800 people each choose once between A, B, and buying neither. Prices of A and B in units of 100 yen are independently drawn uniformly from 1 to 5, and quality from 0 to 5. Choices are drawn from logit probabilities with true coefficients (−1.2, 0.9). The generation procedure and seed are fixed in the code.</p>
+<p>Using yᵢⱼ to indicate the chosen alternative, we maximize the log-likelihood:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>y</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msub><mi>P</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\ell(\beta)=\sum_i\sum_j y_{ij}\log P_{ij}(\beta).</annotation></semantics></math></p>
+<p>JavaScript computes the score and information matrix and applies Newton updates with step-size adjustment. The display reports whether the largest absolute component of the average score is below 10⁻⁸. Numerical validation covers this teaching design; a general-purpose estimator for user-supplied data is a possible future extension.</p>
+<p>The simple logit relationship connected to Berry (1994) is log(sⱼ) − log(s₀) = δⱼ. Defining the outside option share s₀ from market size and addressing price endogeneity are central considerations. The estimator on this page is maximum likelihood for individual choice data.</p>
+</div>
+<h2 id="demo">Demo</h2>
+<div id="demo-logit" class="demo">
+<p>Enable JavaScript to use the price and quality sliders.</p>
+</div>
+<div class="level-content" data-level="3">
+<div id="demo-mle" class="demo">
+<p>Enable JavaScript to run maximum likelihood estimation on fictional data.</p>
+</div>
+</div>
+<p><strong>Try it:</strong> Increase only A’s price and explain how sales and profit change. Then vary B’s price and examine whether the price that gives A a high profit changes. Quality comparisons hold unit cost fixed at 80 yen.</p>
+<h2 id="learning-path">Learning path</h2>
+<p>Utility, demand, and firm behavior in introductory microeconomics → probability and estimation in statistics → identification and maximum likelihood in econometrics → demand estimation and price competition in industrial organization. These are examples of subject areas.</p>
+<h2 id="career-connections">Career connections</h2>
+<p>Demand forecasting in marketing, product design, pricing analysis, transport policy forecasts, and competition policy. These applications develop the ability to compare model predictions with observations and explain assumptions and uncertainty.</p>
+<h2 id="seminar-activity-record">Seminar activity record</h2>
+<p>Complete this section after an activity takes place. The record is currently blank.</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Activity</th>
+<th>Student outcomes / shareable work</th>
+<th>Next question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="references-and-sources">References and sources</h2>
+<p>All entries below are <strong>AI-drafted, sources not yet verified</strong>. Bibliographic details and the correspondence between formulations and explanations will be checked before publication.</p>
+<ul>
+<li>McFadden, D. (1974), “Conditional Logit Analysis of Qualitative Choice Behavior.”</li>
+<li>Berry, S. T. (1994), “Estimating Discrete-Choice Models of Product Differentiation.”</li>
+</ul>
+<p><a href="../fields/discrete-choice.html">Discrete choice ideas</a> · <a href="../fields/empirical-micro.html">Empirical microeconomics ideas</a> · <a href="../index.html">Home</a></p>
+</article>
+</main>
+<footer class="site-footer"><div><strong>Applied Microeconomics</strong><p>A casebook in microeconomics and game theory · Prepared by Isogai</p></div><div><p>Materials in development · 2026.10</p><p>Updated 2026-10-30 · <a href="../../sources/en/cases/discrete-choice-logit.md" download>Markdown source</a></p><p>Translation status: draft · Japanese source updated: 2026-10-30</p><p>Text and references: AI-drafted, sources not yet verified / Data: fictional</p></div></footer>
+</body>
+</html>

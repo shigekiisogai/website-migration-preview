@@ -20,6 +20,8 @@ npm run dev
 npm run build:github
 npm run build:cloudflare
 npm run check:content
+npm run check:links
+npm run test:applied
 npm test
 npm run check:publish
 npm run preview:cloudflare
@@ -52,6 +54,7 @@ Cloudflare互換プレビューは通常 `http://127.0.0.1:8787/` です。停�
 | 対象 | コマンド | 出力 | URLの先頭 |
 |---|---|---|---|
 | GitHub Pages | `npm run build:github` | `dist-github/` | `/website-migration-preview/` |
+| GitHubユーザーサイト（将来） | `npm run build:github:root` | `dist-github/` | `/` |
 | Cloudflare | `npm run build:cloudflare` | `dist-cloudflare/` | `/` |
 
 `.github/workflows/deploy.yml` は公式ActionsをコミットSHAで固定し、公開ジョブだけにPages用の権限を付与します。公開リポジトリ・標準GitHubホストランナーを利用します。既存の `sisogai.github.io` リポジトリは作業対象に含みません。
@@ -75,3 +78,7 @@ WordPress WXR 1.2に対応します。公開済みpageのみを `.migration/wxr-
 追加の月額費用は無料プランの条件内で0円を見込みます。独自ドメイン、AI API、データベース、学生の情報を保存するサービスは今回の構成に含めていません。
 
 詳細: [移行レポート](docs/migration-report.md)・[テスト結果](docs/test-results.md)・[ページ対応表](docs/page-map.md)・[本人の操作](docs/user-steps.md)・[Cloudflare設定](docs/cloudflare.md)・[教育アプリ拡張案](docs/future-education.md)
+
+## 教育コンテンツ統合の作業ブランチ
+
+Teaching・Course Materials・日本語ページから、日英の応用事例集とインタラクティブ教材へ進めます。素材、更新手順、baseの切替、検証範囲は [教育コンテンツ統合](docs/teaching-integration.md) を参照してください。導線を追加した3ページは移行時の比較基準と差分があるため、本人の確認まで `check:content` が公開を停止します。

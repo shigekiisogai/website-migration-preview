@@ -1,0 +1,27 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import {appliedPage,appliedRoot} from '../../../lib/applied.mjs';
+import {withBase} from '../../../lib/paths.mjs';
+export function getStaticPaths(){
+ const snapshots=import.meta.glob('../../../materials/applied/**/*.html',{query:'?raw',import:'default',eager:true});
+ return Object.entries(snapshots).map(([file,html])=>{
+  const key=file.split('/materials/applied/')[1];
+  const path=key.replace(/index\.html$/,'').replace(/\.html$/,'').replace(/\/$/,'');
+  return {params:{path},props:{html,key}};
+ });
+}
+const base=import.meta.env.BASE_URL;
+const {html,key}=Astro.props;
+const page=appliedPage(html,key,base);
+---
+<Layout title={page.title} lang={page.lang} route={appliedRoot} scriptsAllowed>
+ <Fragment slot="head">
+  <link rel="stylesheet" href={withBase(appliedRoot+'assets/casebook.css',base)} />
+  <script is:inline defer src={withBase(appliedRoot+'assets/language.js',base)}></script>
+  <script is:inline defer src={withBase(appliedRoot+'assets/models.js',base)}></script>
+  <script is:inline defer src={withBase(appliedRoot+'assets/i18n.js',base)}></script>
+  <script is:inline defer src={withBase(appliedRoot+'assets/app.js',base)}></script>
+ </Fragment>
+ <p><a href={withBase('/teaching/',base)}>Teaching / 授業</a> · <a href={withBase(appliedRoot,base)}>言語を選ぶ / Choose a language</a> · <a href={withBase('/teaching/interactive/',base)}>Interactive materials / インタラクティブ教材</a></p>
+ <Fragment set:html={page.body} />
+</Layout>

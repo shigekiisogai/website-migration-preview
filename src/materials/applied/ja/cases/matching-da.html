@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>安定マッチングとDAアルゴリズム | ミクロ経済学 応用事例集</title>
+  <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script defer src="../../assets/language.js"></script>
+  <script defer src="../../assets/models.js"></script>
+  <script defer src="../../assets/i18n.js"></script>
+  <script defer src="../../assets/app.js"></script>
+</head>
+<body class="case-page">
+<a class="skip" href="#main">本文へ</a>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span>ミクロ経済学 応用事例集<small>MICROECONOMICS &amp; GAME THEORY · CASEBOOK</small></span></a>
+  <div class="header-links"><nav aria-label="サイト"><a href="../index.html#cases">事例目録</a><a href="../index.html#fields">分野別目録</a><a href="../about.html">この資料集について</a></nav>
+  <nav class="language-switch" aria-label="言語を選ぶ"><a href="../../ja/cases/matching-da.html" data-language="ja" lang="ja" hreflang="ja" aria-current="page">日本語</a> <span aria-hidden="true">｜</span> <a href="../../en/cases/matching-da.html" data-language="en" lang="en" hreflang="en">English</a></nav></div>
+</header>
+<main id="main">
+  <div class="page-meta"><span>CASE 01 · マーケットデザイン</span><span class="stage">構想</span><span class="verification">AI作成・原典未確認</span></div>
+  
+  <div class="level-picker" role="group" aria-label="読み方"><span class="picker-label">読み方</span><button data-set-level="1" aria-pressed="true">★1 <span>直感とビジュアル</span></button><button data-set-level="2" aria-pressed="false">★2 <span>簡単なモデル</span></button><button data-set-level="3" aria-pressed="false">★3 <span>論文と推定方法</span></button></div>
+  <noscript><p class="notice">JavaScriptを有効にするとデモを操作できます。現在はすべての難易度の本文を表示しています。</p></noscript>
+  <article><h1 id="安定マッチングとdaアルゴリズム">安定マッチングとDAアルゴリズム</h1><nav class="contents" aria-label="目次"><p>目次</p><ol><li><a href="#問い">問い</a></li><li><a href="#概要">概要</a></li><li><a href="#実例研修医の配属と学校選択">実例：研修医の配属と学校選択</a></li><li><a href="#適用範囲と限界">適用範囲と限界</a></li><li><a href="#モデル">モデル</a></li><li><a href="#データと推定">データと推定</a></li><li><a href="#デモ">デモ</a></li><li><a href="#学ぶ道筋科目">学ぶ道筋（科目）</a></li><li><a href="#将来の仕事の例">将来の仕事の例</a></li><li><a href="#ゼミでの取組み記録">ゼミでの取組み記録</a></li><li><a href="#文献出典">文献・出典</a></li></ol></nav>
+<h2 id="問い">問い</h2>
+<p><strong>問い：学生と受入先の希望が重なったとき、どんな手順で組み合わせればよいでしょうか。</strong></p>
+<h2 id="概要">概要</h2>
+<div class="level-content" data-level="1">
+<p>まず、希望の相手に申し込みます。受け手は、届いた申し込みのなかから最も好む相手を「いったん保留」。断られた人は、次に好きな相手へ進みます。この繰り返しが、DA（Deferred Acceptance）の基本です。</p>
+</div>
+<div class="level-content" data-level="2">
+<p>DAは、提案と暫定的な保留を繰り返して安定な組合せを求める手順です。このページでは学生3人、病院3か所、各病院の定員1人、同順位なし、全員がどの相手との組合せも受け入れる場合を扱います。</p>
+</div>
+<div class="level-content" data-level="3">
+<p>制度設計の出発点は、参加者の選好、定員、優先順位、参加条件の整理です。単純なDAの性質を確認してから、現実の制度が持つ追加条件を調べます。この試作では計算実験を行い、制度の効果の推定は今後の課題として位置づけます。</p>
+</div>
+<h2 id="実例研修医の配属と学校選択">実例：研修医の配属と学校選択</h2>
+<p>研修医と病院のマッチング、児童・生徒の学校選択は、マーケットデザインを考える代表的な題材です。Gale–Shapley（1962）は安定な組合せの基礎、Roth–Peranson（1999）は医師市場の制度設計、Abdulkadiroğlu–Sönmez（2003）は学校選択を扱う文献として読む予定です。<strong>実例・文献説明はAI作成・原典未確認</strong>です。</p>
+<h2 id="適用範囲と限界">適用範囲と限界</h2>
+<p>学校選択では、学校側の順位は制度上の優先順位として解釈します。現実の研修医制度には複数人の定員やカップルなど追加の条件があり、下の実験はDAの核を学ぶための1対1の教材です。現行制度の詳細は、公開前に公式資料で確認します。</p>
+<h2 id="モデル">モデル</h2>
+<div class="level-content" data-level="1">
+<p>いまの組合せを抜けて「お互い、そちらがよい」と思う学生と病院がいたら、その2者は別の組をつくりたくなります。このような組をブロッキングペア（blocking pair）と呼びます。デモの赤い破線を探してみましょう。</p>
+<p>安定な組合せでは、ブロッキングペアは0組になります。提案する側を替えると、安定な組合せのなかで、誰に有利な結果が選ばれるかを比較できます。</p>
+</div>
+<div class="level-content" data-level="2">
+<p>割当てを μ とします。学生 s と病院 h が互いに現在の相手より相手を好むとき、(s, h) はブロッキングペアです。未割当ての状態は、どの相手との割当てよりも下位とします。</p>
+<ul>
+<li>各学生と各病院は、最大1人の相手を持ちます。</li>
+<li>全員が受入可能な相手と組み、ブロッキングペアが0組なら安定です。</li>
+<li>各提案者は同じ相手に2回提案しないため、この教材では最大9回の提案で停止します。</li>
+<li>厳密な選好を持つ標準的な1対1モデルでは、学生側提案DAは学生にとって最良の安定な割当てを、病院側提案DAは病院にとって最良の安定な割当てを与えます。</li>
+</ul>
+<p>ここでの「最良」は、同じ選好のもとで可能な安定な割当ての集合について述べています。数値化した満足度の総和を最大化する基準とは区別して定義します。</p>
+</div>
+<div class="level-content" data-level="3">
+<p>最初の検証課題は、厳密・完備な選好のもとでの停止性と安定性です。受け手が保留する相手は手順の進行とともに改善します。最終的な相手より好む相手に断られた提案者は、その相手と最終的にブロッキングペアをつくれません。この関係を使って証明を組み立てます。</p>
+<p>次に、提案者最適性や提案者側の耐戦略性について、対象となるモデルと定理の条件を原典で確認します。学校の優先順位、定員、同順位の処理、カップルを入れるときは、その条件とアルゴリズムを改めて検討します。</p>
+</div>
+<h2 id="データと推定">データと推定</h2>
+<p>全順位は教材用に作成した架空データです。学生番号1〜3は仮想エージェントの識別子です。各行に1・2・3を1回ずつ入力し、同じ選好を固定して提案側の違いを比較します。安定性は全9組の学生・病院を調べて判定します。</p>
+<div class="level-content" data-level="3">
+<p>将来の実証では、申告順位、定員、割当て結果、制度変更の時期などが候補になります。申告順位を真の選好とみなせる条件、参加者の選択、観測できる範囲を検討します。実在の個人の順位や配属記録は本サイトに収録しません。まずは公開された制度情報と架空データによる再現可能な比較から始めます。</p>
+</div>
+<h2 id="デモ">デモ</h2>
+<div id="demo-da" class="demo">
+<p>JavaScriptを有効にすると、選好の編集とDAの提案手順を操作できます。</p>
+</div>
+<p><strong>試してみよう：</strong> 初期値で学生側提案を最後まで進め、病院側提案と比較します。次に学生1の順位を入れ替えて、結果と提案回数がどう変わるかを説明してみましょう。「不安定な割当ての例」では、誰と誰が抜けたくなるかを確認できます。</p>
+<h2 id="学ぶ道筋科目">学ぶ道筋（科目）</h2>
+<p>入門ミクロで選好と選択 → ゲーム理論で戦略と制度 → マーケットデザインで安定性とインセンティブ → プログラミングでアルゴリズムを検証、という順に学べます。科目名は学ぶ分野の例であり、実際の開講科目・履修条件は別途確認します。</p>
+<h2 id="将来の仕事の例">将来の仕事の例</h2>
+<p>配属・人員配置の仕組みの設計、教育行政の制度分析、プラットフォームでの割当て設計など。現場では公平性、運用費用、法制度、当事者の納得も併せて考えます。</p>
+<h2 id="ゼミでの取組み記録">ゼミでの取組み記録</h2>
+<p>実施後に追記する欄です。現時点の記録は空欄です。</p>
+<table>
+<thead>
+<tr>
+<th>実施日</th>
+<th>何をしたか</th>
+<th>学生の成果・公開可能な成果物</th>
+<th>次の問い</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="文献出典">文献・出典</h2>
+<p>以下はすべて <strong>AI作成・原典未確認</strong>。公開前に著者・年・題名・本文の該当箇所を照合します。</p>
+<ul>
+<li>Gale, D. and Shapley, L. S.（1962）, “College Admissions and the Stability of Marriage.”</li>
+<li>Roth, A. E. and Peranson, E.（1999）, “The Redesign of the Matching Market for American Physicians: Some Engineering Aspects of Economic Design.”</li>
+<li>Abdulkadiroğlu, A. and Sönmez, T.（2003）, “School Choice: A Mechanism Design Approach.”</li>
+</ul>
+<p><a href="../fields/market-design.html">マーケットデザインの構想一覧へ</a> · <a href="../index.html">トップへ</a></p>
+</article>
+</main>
+<footer class="site-footer"><div><strong>ミクロ経済学 応用事例集</strong><p>ミクロ経済学・ゲーム理論の資料集 · 磯貝 作成</p></div><div><p>作成中の資料 · 2026.10</p><p>最終更新 2026-10-30 · <a href="../../sources/ja/cases/matching-da.md" download>このページのMarkdown</a></p><p>翻訳状態: draft</p><p>原稿・文献情報：AI作成・原典未確認 ／ データ：架空</p></div></footer>
+</body>
+</html>

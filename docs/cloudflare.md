@@ -30,7 +30,7 @@ CloudflareのWorkers & PagesからGitリポジトリ連携を選び、この試�
 | Production branch | `main` |
 | Root directory | `/` |
 | Node version | `24` |
-| Build command | `npm ci --ignore-scripts && npm run check:publish && npm test && npm run build:github && npm run build:cloudflare && npm run check:content` |
+| Build command | `npm ci --ignore-scripts && npm run check:publish && npm test && npm run build:github && npm run build:cloudflare && npm run test:applied && npm run check:links && npm run check:content` |
 | Deploy command | `npx --no-install wrangler deploy` |
 | Worker name | `isogai-website-preview`（設定ファイルと一致させる） |
 | Environment | `ASTRO_TELEMETRY_DISABLED=1`, `WRANGLER_SEND_METRICS=false` |
@@ -44,3 +44,7 @@ Workers Freeを維持し、標準の `workers.dev` URLを使います。静的�
 今回の出力は約140KBで、無料枠のファイル数・サイズに対して十分小さい構成です。Cloudflareのアカウントプランはダッシュボードで管理されるため、本人がそこでFreeを確認します。
 
 参考: [Static Assets料金](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/)・[Buildsの上限](https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/)・[Git連携とビルド設定](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/)
+
+## 教育コンテンツ統合ブランチでの変更
+
+教材のパスとbase切替、CSP、検証範囲は [教育コンテンツ統合](teaching-integration.md) に記載しています。現在のビルドには49個のHTML（404を含む）があります。このブランチは導線を追加した3ページの内容確認を待つ状態です。上記の既存公開記録と、今回のローカル検証を区別してください。
