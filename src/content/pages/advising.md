@@ -1,5 +1,5 @@
 ---
-title: "Advising Policy/指導を希望する方へ"
+title: "Advising Policy / 指導を希望する方へ"
 route: "/advising-policy-指導を希望する方へ/"
 source: "https://shigekiisogai.wordpress.com/advising-policy-%E6%8C%87%E5%B0%8E%E3%82%92%E5%B8%8C%E6%9C%9B%E3%81%99%E3%82%8B%E6%96%B9%E3%81%B8/"
 lang: "ja"

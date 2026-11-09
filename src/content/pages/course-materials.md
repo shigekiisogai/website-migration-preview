@@ -1,5 +1,5 @@
 ---
-title: "Course Materials/講義資料"
+title: "Course Materials / 講義資料"
 route: "/講義資料-course-materials/"
 source: "https://shigekiisogai.wordpress.com/%E8%AC%9B%E7%BE%A9%E8%B3%87%E6%96%99-course-materials/"
 lang: "ja"

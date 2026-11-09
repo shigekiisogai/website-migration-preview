@@ -1,10 +1,9 @@
 ---
 import '../styles/site.css';
-import routes from '../lib/routes.json';
+import {siteHeader,navigationItems as menu} from '../lib/navigation.mjs';
 import {withBase} from '../lib/paths.mjs';
 const {title, lang='en',route='/',source,scriptsAllowed=false}=Astro.props;
 const base=import.meta.env.BASE_URL;
-const menu=['research','teaching','course-materials','advising','japanese'].map(id=>({...routes.find(p=>p.id===id)!,label:id==='japanese'?'日本語での情報':routes.find(p=>p.id===id)!.title}));
 ---
 <!doctype html>
 <html lang={lang}>
@@ -15,18 +14,15 @@ const menu=['research','teaching','course-materials','advising','japanese'].map(
   <meta http-equiv="Content-Security-Policy" content={`default-src 'self'; script-src ${scriptsAllowed?"'self'":"'none'"}; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'`} />
   <slot name="head" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="stylesheet" href={withBase('/site-header.css',base)} />
   <title>{title} – Shigeki ISOGAI</title>
  </head>
  <body>
   <a class="skip-link" href="#content">Skip to content / 本文へ</a>
   <div class="site">
-   <header class="site-header">
-    <a class="site-title" href={withBase('/',base)}>Shigeki ISOGAI</a>
-    <details class="mobile-menu"><summary>Menu / メニュー</summary><nav aria-label="Mobile navigation"><ul>{menu.map(p=><li><a href={withBase(p.route,base)} aria-current={p.route===route?'page':undefined}>{p.label}</a></li>)}</ul></nav></details>
-    <nav class="desktop-menu" aria-label="Main navigation"><ul>{menu.map(p=><li><a href={withBase(p.route,base)} aria-current={p.route===route?'page':undefined}>{p.label}</a></li>)}</ul></nav>
-   </header>
-   <main id="content" class:list={['site-content',{'home-page':route==='/'}]}>
-    <article class="content-area"><h1 class="entry-title">{title}</h1><div class="entry-content"><slot /></div></article>
+   <Fragment set:html={siteHeader(base,route)} />
+   <main id="content" class:list={['site-content',{'home-page':route==='/', 'materials-page':route.startsWith('/teaching/applied-micro/')}]}>
+    <article class="content-area"><slot name="before-title" /><h1 class="entry-title">{title}</h1><div class="entry-content"><slot /></div></article>
    </main>
    <footer class="site-footer">
     <nav aria-label="Footer navigation"><ul>{menu.map(p=><li><a href={withBase(p.route,base)}>{p.label}</a></li>)}</ul></nav>

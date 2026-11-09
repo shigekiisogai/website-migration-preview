@@ -1,5 +1,5 @@
 ---
-title: "To Students/学生の皆さんへ"
+title: "To Students / 学生の皆さんへ"
 route: "/advising-policy/"
 source: "https://shigekiisogai.wordpress.com/advising-policy/"
 lang: "ja"

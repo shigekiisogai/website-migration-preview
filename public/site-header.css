@@ -1,0 +1,40 @@
+/* The personal site's header, isolated from imported teaching styles. */
+.personal-header {
+ --gutter:clamp(24px,5vw,96px);
+ display:flex;align-items:center;justify-content:space-between;gap:24px 40px;
+ margin:0;padding:30px var(--gutter);border:0;border-bottom:1px solid #dfe7ed;
+ background:#fff;color:#192b3a;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
+ font-size:17px;line-height:1.85;text-align:left;
+}
+.personal-header * { box-sizing:border-box; }
+.personal-header a.site-title { color:#192b3a;font-size:27px;font-weight:750;line-height:1.25;white-space:nowrap;text-decoration:none;letter-spacing:-.7px;margin:0;padding:0; }
+.personal-header nav ul { display:flex;flex-wrap:wrap;list-style:none;padding:0;margin:0;gap:8px 14px; }
+.personal-header nav li { list-style:none;padding:0;margin:0; }
+.personal-header nav a { display:block;padding:8px 9px;font-size:14px;font-weight:500;color:#41515f;text-decoration:none;border-radius:5px; }
+.personal-header nav a:hover { background:#f0f5f9;color:#245c8f; }
+.personal-header a[aria-current='page'] { background:#edf4f9;color:#245c8f;font-weight:650; }
+.personal-header :focus-visible { outline:3px solid #4388bc;outline-offset:5px;border-radius:2px; }
+.personal-header .mobile-menu { display:none;margin:0;padding:0;border:0; }
+@media (max-width:1200px) and (min-width:901px) {
+ .personal-header { flex-wrap:wrap;gap:14px;padding-block:24px 18px; }
+ .personal-header .desktop-menu { width:100%; }
+ .personal-header nav ul { gap:4px 14px; }
+ .personal-header nav a { padding-inline:0;padding-right:12px; }
+}
+@media (max-width:900px) {
+ .personal-header { --gutter:clamp(22px,5vw,40px);flex-wrap:wrap;padding-block:24px;gap:20px; }
+ .personal-header a.site-title { font-size:25px; }
+ .personal-header .desktop-menu { display:none; }
+ .personal-header .mobile-menu { display:block; }
+ .personal-header summary { cursor:pointer;list-style-position:inside;padding:7px 12px;border:1px solid #dfe7ed;border-radius:5px;font-size:14px;font-weight:400;color:#245c8f; }
+ .personal-header .mobile-menu[open] { width:100%; }
+ .personal-header .mobile-menu[open] summary { width:fit-content; }
+ .personal-header .mobile-menu nav ul { flex-direction:column;gap:2px;padding-top:14px; }
+ .personal-header .mobile-menu nav a { padding:10px 12px;font-size:15px; }
+}
+@media (max-width:650px) {
+ .personal-header { gap:18px 12px;line-height:1.8; }
+ .personal-header a.site-title { font-size:23px; }
+}
+@media print { .personal-header { display:none; } }

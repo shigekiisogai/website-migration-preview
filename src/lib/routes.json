@@ -5,17 +5,17 @@
     "id": "home"
   },
   {
-    "title": "Course Materials/講義資料",
+    "title": "Course Materials / 講義資料",
     "route": "/講義資料-course-materials/",
     "id": "course-materials"
   },
   {
-    "title": "Advising Policy/指導を希望する方へ",
+    "title": "Advising Policy / 指導を希望する方へ",
     "route": "/advising-policy-指導を希望する方へ/",
     "id": "advising"
   },
   {
-    "title": "Teaching/授業",
+    "title": "Teaching / 授業",
     "route": "/teaching/",
     "id": "teaching"
   },
@@ -35,7 +35,7 @@
     "id": "2025f-microeconomics-graduate-school"
   },
   {
-    "title": "To Students/学生の皆さんへ",
+    "title": "To Students / 学生の皆さんへ",
     "route": "/advising-policy/",
     "id": "advising-policy"
   },

@@ -22,7 +22,11 @@ for(const lang of ['ja','en']) {
     assert.ok(app.all('[data-level]').every(e=>e.hidden===(e.dataset.level!=='3')));
     const denied=load(page('matching-da'),{denied:true,level:'bad'});denied.all('[data-set-level]')[1].fire('click');
     assert.ok(denied.all('[data-level]').every(e=>e.hidden===(e.dataset.level!=='2')));
-    const home=load(`${lang}/index.html`);home.all('[data-entry-level]')[2].fire('click');assert.equal(home.storage.get('isogai-showcase-level'),'3');
+    const home=load(`${lang}/index.html`);
+    for(const level of ['1','2','3']){
+      home.all('[data-entry-level]').find(link=>link.dataset.entryLevel===level).fire('click');
+      assert.equal(home.storage.get('isogai-showcase-level'),level);
+    }
   });
   test(`${lang}: DA stepping, playback, stability, editing and comparisons`,()=>{
     const app=load(page('matching-da'));
