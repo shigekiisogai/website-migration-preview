@@ -1,14 +1,10 @@
 ---
 title: "Demand Prediction and Estimation with Discrete Choice Models"
 field: "CASE 02 · Discrete choice and marketing"
-stage: idea
 levels: [1, 2, 3]
 sources: [McFadden 1974, Berry 1994]
-verification_status: AI-drafted, sources not yet verified
 updated: 2026-10-30
-translation_status: draft
 source_updated: 2026-10-30
-source_sha256: 98c8587f841e89217ec12647836a28247c6b2c7753a063443baca767ba60e4cb
 ---
 
 # Demand Prediction and Estimation with Discrete Choice Models
@@ -33,7 +29,7 @@ Estimate coefficients from individual choices and use them to predict demand aft
 
 ## Applications: analyzing product choice
 
-Transport mode choice and product choice are applications of discrete choice models. We introduce McFadden (1974) as a starting point for conditional logit and Berry (1994) as an introduction to demand analysis using market shares of differentiated products. **Applications and references: AI-drafted, sources not yet verified.**
+Transport mode choice and product choice are applications of discrete choice models. We introduce McFadden (1974) as a starting point for conditional logit and Berry (1994) as an introduction to demand analysis using market shares of differentiated products.
 
 ## Scope and limitations
 
@@ -110,12 +106,12 @@ Demand forecasting in marketing, product design, pricing analysis, transport pol
 Complete this section after an activity takes place. The record is currently blank.
 
 | Date | Activity | Student outcomes / shareable work | Next question |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 |  |  |  |  |
 
 ## References and sources
 
-All entries below are **AI-drafted, sources not yet verified**. Bibliographic details and the correspondence between formulations and explanations will be checked before publication.
+
 
 - McFadden, D. (1974), “Conditional Logit Analysis of Qualitative Choice Behavior.”
 - Berry, S. T. (1994), “Estimating Discrete-Choice Models of Product Differentiation.”

@@ -1,12 +1,9 @@
 ---
 title: 立地選択
 field: FIELD 04 · 構想一覧
-stage: idea
 levels: [1, 2, 3]
 sources: [Seim 2006]
-verification_status: AI作成・原典未確認
 updated: 2026-10-30
-translation_status: draft
 source_updated: 2026-10-30
 ---
 
@@ -23,6 +20,6 @@ source_updated: 2026-10-30
 人口がどこに分布し、移動しやすさと商圏がどう関係するかを地図で考えます。
 将来はe-Stat地域メッシュ統計と国土数値情報を候補に、利用条件を確認して教材化する計画です。
 
-出典候補：Seim（2006）。**AI作成・原典未確認**。公開データの取得・利用は今回の対象外です。
+出典候補：Seim（2006）。公開データの取得・利用は今回の対象外です。
 
 [トップへ](../index.md#fields)

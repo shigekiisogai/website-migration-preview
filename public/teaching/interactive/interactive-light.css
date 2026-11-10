@@ -1,0 +1,37 @@
+/* Shared presentation layer. Teaching scripts and math markup stay unchanged. */
+:root {
+ color-scheme:light;
+ --bg:#fff; --surface:#f4f7fa; --card:#fff; --border:#cbd8e2;
+ --accent:#245c8f; --accent2:#85520d; --accent3:#23724a; --danger:#a93046;
+ --text:#192b3a; --muted:#506271; --shadow:0 3px 16px rgb(25 43 58 / 6%);
+}
+body { font-size:16px; }
+.hero { background:linear-gradient(120deg,#f4f8fb,#eaf2f8); padding-block:44px 36px; }
+.hero::before { background:none; }
+.hero h1,.chapter-card h2 { color:var(--text); }
+.hero p {
+ color:#354c5f; font-size:17px; line-height:1.9; max-width:72ch;
+ margin-top:16px; text-wrap:pretty;
+}
+.hero .hero-inner>p+p { color:var(--muted); font-size:15px; margin-top:20px; }
+.hero>.chapter-badge,.hero>h1,.hero>p { max-width:960px; margin-inline:auto; }
+.hero>.chapter-badge { display:table; margin-left:max(0px,calc((100% - 960px)/2)); }
+.chapter-card a,.link-button,.action-button { color:#fff; background:#245c8f; }
+.chapter-card a:hover,.chapter-card a:focus,.link-button:hover,.action-button:hover,.action-button:focus { background:#19466e; }
+.site-nav a.current,.site-nav a:hover,.site-nav a:focus { color:#19466e; background:#e7f0f7; }
+.canvas-wrap,.path-chart,.duality-chart { background:#f4f7fa; }
+/* Existing canvas code paints a dark bitmap. This display transform gives it
+   a light background without changing calculations, labels or coordinates. */
+canvas { filter:invert(1) hue-rotate(180deg); }
+.stat,.summary-box { background:#f4f7fa; }
+.stat .value { color:var(--text); }
+.notice { background:#fff8e9; border-color:#d7b26a; }
+.def-box,.formula-strip { background:#eef5fb; border-color:#b5cadb; }
+.thm-box { background:#eff8f1; border-color:#abcbb5; }
+.chapter-card p { font-size:15px; }
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible {
+ outline:3px solid #245c8f; outline-offset:4px;
+}
+@media(max-width:820px) {
+ .hero p { font-size:16px; line-height:1.85; }
+}

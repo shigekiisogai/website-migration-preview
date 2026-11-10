@@ -1,11 +1,11 @@
 ---
 title: "Course Materials / 講義資料"
-route: "/講義資料-course-materials/"
+route: "/course-materials/"
 source: "https://shigekiisogai.wordpress.com/%E8%AC%9B%E7%BE%A9%E8%B3%87%E6%96%99-course-materials/"
 lang: "ja"
 ---
 
-## 自習用教材 / Self-study materials
+<h2 id="self-study-materials">自習用教材 / Self-study materials</h2>
 
 - [ミクロ経済学 応用事例集（日本語・English）](/teaching/applied-micro/)
 - [インタラクティブ教材 / Interactive Microeconomics](/teaching/interactive/)

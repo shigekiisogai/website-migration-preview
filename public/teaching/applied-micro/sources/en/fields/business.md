@@ -1,14 +1,10 @@
 ---
 title: "Business applications"
 field: "FIELD 06 · Ideas"
-stage: idea
 levels: [1, 2, 3]
 sources: []
-verification_status: AI-drafted, sources not yet verified
 updated: 2026-10-29
-translation_status: draft
 source_updated: 2026-10-29
-source_sha256: ac705b920ab9e30ca6b6e542cc9f22063a331f3d42385203743d51570bba8cf9
 ---
 
 # Business applications
@@ -30,6 +26,6 @@ We are considering a small model in which students can vary the interdependence 
 How does performance-related pay affect effort and risk bearing?
 The idea is to use fictional examples to explore the basics of contracts under asymmetric information.
 
-Text: **AI-drafted, sources not yet verified**. References and applications will be selected when these ideas become cases.
+ References and applications will be selected when these ideas become cases.
 
 [Home](../index.md#fields)

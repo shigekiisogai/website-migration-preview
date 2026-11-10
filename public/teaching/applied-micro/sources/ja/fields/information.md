@@ -1,12 +1,9 @@
 ---
 title: コミュニケーション・情報
 field: FIELD 05 · 構想一覧
-stage: idea
 levels: [1, 2, 3]
 sources: [Kamenica–Gentzkow 2011, Crawford–Sobel 1982]
-verification_status: AI作成・原典未確認
 updated: 2026-10-30
-translation_status: draft
 source_updated: 2026-10-30
 ---
 
@@ -24,6 +21,6 @@ Kamenica–Gentzkow（2011）, “Bayesian Persuasion” を読む入口を想�
 送り手と受け手の目的のずれが、言葉の伝わり方にどう関わるかを考えます。
 Crawford–Sobel（1982）, “Strategic Information Transmission” を題材にする構想です。
 
-実例・文献情報はすべて **AI作成・原典未確認**。デモとゼミでの実施は今後検討します。
+デモとゼミでの実施は今後検討します。
 
 [トップへ](../index.md#fields)

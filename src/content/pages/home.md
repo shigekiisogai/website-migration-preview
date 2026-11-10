@@ -22,7 +22,7 @@ My current research studies cartel behavior through epistemic game theory.
 </ul>
 <div style="display:flex;flex-wrap:wrap;gap:12px">
 <a href="https://shigekiisogai.wordpress.com/research/" style="display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border:1px solid #245c8f;border-radius:4px;color:#fff;background:#245c8f;font-weight:600;text-decoration:none">Research</a>
-<a href="https://shigekiisogai.wordpress.com/%e8%ac%9b%e7%be%a9%e8%b3%87%e6%96%99-course-materials/" style="display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border:1px solid #245c8f;border-radius:4px;color:#245c8f;background:#fff;font-weight:600;text-decoration:none">Course Materials</a>
+<a href="/course-materials/" style="display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border:1px solid #245c8f;border-radius:4px;color:#245c8f;background:#fff;font-weight:600;text-decoration:none">Course Materials</a>
 </div>
 </div>
 <aside style="padding:20px;border:1px solid #d8dde4;border-radius:6px;background:#f6f7f9">
@@ -53,7 +53,7 @@ My current research studies cartel behavior through epistemic game theory.
 <p style="margin:0;color:#5d6673">Current and past courses in microeconomics and game theory.</p>
 </article>
 <article>
-<h4 style="margin:0 0 8px;font-size:18px"><a href="/teaching/#self-study-materials" style="color:#245c8f;text-decoration:none">Self-study materials / 自習用教材</a></h4>
+<h4 style="margin:0 0 8px;font-size:18px"><a href="/course-materials/#self-study-materials" style="color:#245c8f;text-decoration:none">Self-study materials / 自習用教材</a></h4>
 <p style="margin:0;color:#5d6673">Explore the casebook and interactive microeconomics materials.</p>
 </article>
 </div>

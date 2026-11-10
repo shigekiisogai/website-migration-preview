@@ -1,6 +1,6 @@
 ---
 title: "日本語教材の使用について（GBC生向け）"
-route: "/日本語教材の使用について（gbc生向け）/"
+route: "/japanese-materials-policy/"
 source: "https://shigekiisogai.wordpress.com/%E6%97%A5%E6%9C%AC%E8%AA%9E%E6%95%99%E6%9D%90%E3%81%AE%E4%BD%BF%E7%94%A8%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88gbc%E7%94%9F%E5%90%91%E3%81%91%EF%BC%89/"
 lang: "ja"
 ---

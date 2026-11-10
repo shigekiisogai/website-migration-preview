@@ -15,7 +15,7 @@ I also provide Japanese versions. Since the class is, of course, conveyed in Eng
 注意: これらのノートは予習・復習のために用意されたものですが、誤字や間違い、また授業で触れない内容が含まれることもあります。講義で話された内容が正式な授業内容になるのでご注意ください。（完全な自学自習を否定はしませんが）授業を聞くのが理解への一番の近道です。  
 日本語版は学習の便宜のために用意しています。もちろん授業では英語を用いますが、自習用に使っていただいて構いません。日本語版の使用に関してより詳しくは以下をご覧ください:  
   
-<a href="https://shigekiisogai.wordpress.com/%e6%97%a5%e6%9c%ac%e8%aa%9e%e6%95%99%e6%9d%90%e3%81%ae%e4%bd%bf%e7%94%a8%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%88gbc%e7%94%9f%e5%90%91%e3%81%91%ef%bc%89/">日本語教材使用に関する注意</a> (My opinion about domestic students learning economics in English)
+<a href="/japanese-materials-policy/">日本語教材使用に関する注意</a> (My opinion about domestic students learning economics in English)
 
 <strong>Introduction</strong>  
 <a href="https://drive.google.com/file/d/10he7LmBVAlcOM6ICKuGcfzbenxhTsEev/view?usp=sharing" target="_blank" rel="noreferrer noopener">English</a>  

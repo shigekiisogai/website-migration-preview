@@ -9,7 +9,7 @@ This page shares course materials. Some have both English & Japanese versions.
   
 <strong>Note</strong>: Please understand that, by preparing the Japanese version of lecture notes, I DO NOT intend to favor domestic students. Under the GBC’s unique situation and curriculum, students with diverse backgrounds are making considerable efforts. In my opinion, coping with diversity is not treating diverse people in the same way (treating people is not a “one-fits-all” thing); it is understanding the differences, strengths, and weaknesses of diverse people and tailoring the way problems are addressed (Of course, that statement should not be used as an umbrella to justify discrimination, though). I also believe that preparing Japanese notes encourages domestic students to positively participate in class and encourages discussion/group study between domestic and international students. I hope this will (Pareto-)improve the “welfare” of the class.  
   
-<a href="https://shigekiisogai.wordpress.com/%e6%97%a5%e6%9c%ac%e8%aa%9e%e6%95%99%e6%9d%90%e3%81%ae%e4%bd%bf%e7%94%a8%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%88gbc%e7%94%9f%e5%90%91%e3%81%91%ef%bc%89/">日本語教材使用に関する注意</a> (My opinion about domestic students learning economics in English)
+<a href="/japanese-materials-policy/">日本語教材使用に関する注意</a> (My opinion about domestic students learning economics in English)
 
 <strong>Lecture Notes</strong>
 

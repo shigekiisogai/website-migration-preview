@@ -1,12 +1,9 @@
 ---
 title: "安定マッチングとDAアルゴリズム"
 field: CASE 01 · マーケットデザイン
-stage: idea
 levels: [1, 2, 3]
 sources: [Gale–Shapley 1962, Roth–Peranson 1999, Abdulkadiroğlu–Sönmez 2003]
-verification_status: AI作成・原典未確認
 updated: 2026-10-30
-translation_status: draft
 source_updated: 2026-10-30
 ---
 
@@ -32,7 +29,7 @@ DAは、提案と暫定的な保留を繰り返して安定な組合せを求め
 
 ## 実例：研修医の配属と学校選択
 
-研修医と病院のマッチング、児童・生徒の学校選択は、マーケットデザインを考える代表的な題材です。Gale–Shapley（1962）は安定な組合せの基礎、Roth–Peranson（1999）は医師市場の制度設計、Abdulkadiroğlu–Sönmez（2003）は学校選択を扱う文献として読む予定です。**実例・文献説明はAI作成・原典未確認**です。
+研修医と病院のマッチング、児童・生徒の学校選択は、マーケットデザインを考える代表的な題材です。Gale–Shapley（1962）は安定な組合せの基礎、Roth–Peranson（1999）は医師市場の制度設計、Abdulkadiroğlu–Sönmez（2003）は学校選択を扱う文献として読む予定です。
 
 ## 適用範囲と限界
 
@@ -90,12 +87,12 @@ DAは、提案と暫定的な保留を繰り返して安定な組合せを求め
 実施後に追記する欄です。現時点の記録は空欄です。
 
 | 実施日 | 何をしたか | 学生の成果・公開可能な成果物 | 次の問い |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 |  |  |  |  |
 
 ## 文献・出典
 
-以下はすべて **AI作成・原典未確認**。公開前に著者・年・題名・本文の該当箇所を照合します。
+
 
 - Gale, D. and Shapley, L. S.（1962）, “College Admissions and the Stability of Marriage.”
 - Roth, A. E. and Peranson, E.（1999）, “The Redesign of the Matching Market for American Physicians: Some Engineering Aspects of Economic Design.”

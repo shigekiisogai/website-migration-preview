@@ -1,12 +1,9 @@
 ---
 title: "立地選択と参入ゲーム"
 field: CASE 03 · 立地選択と参入ゲーム
-stage: idea
 levels: [1, 2, 3]
 sources: [Bresnahan–Reiss 1991, Seim 2006]
-verification_status: AI作成・原典未確認
 updated: 2026-10-30
-translation_status: draft
 source_updated: 2026-10-30
 ---
 
@@ -32,7 +29,7 @@ source_updated: 2026-10-30
 
 ## 実例：店舗数と地域の需要
 
-小売店やサービス業の出店では、商圏の人口、移動距離、競争、固定費用が関係します。Bresnahan–Reiss（1991）は市場規模・参入・競争の関係、Seim（2006）は参入と立地・製品タイプの選択を学ぶ文献として取り上げます。**実例・文献説明はAI作成・原典未確認**です。
+小売店やサービス業の出店では、商圏の人口、移動距離、競争、固定費用が関係します。Bresnahan–Reiss（1991）は市場規模・参入・競争の関係、Seim（2006）は参入と立地・製品タイプの選択を学ぶ文献として取り上げます。
 
 ## 適用範囲と限界
 
@@ -107,12 +104,12 @@ Bresnahan–Reissを読む際は、企業数に応じた参入閾値や1社当�
 実施後に追記する欄です。現時点の記録は空欄です。
 
 | 実施日 | 何をしたか | 学生の成果・公開可能な成果物 | 次の問い |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 |  |  |  |  |
 
 ## 文献・出典
 
-以下はすべて **AI作成・原典未確認**。公開前に本文・実証対象・仮定を照合します。
+
 
 - Bresnahan, T. F. and Reiss, P. C.（1991）, “Entry and Competition in Concentrated Markets.”
 - Seim, K.（2006）, “An Empirical Model of Firm Entry with Endogenous Product-Type Choices.”

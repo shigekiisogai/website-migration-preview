@@ -1,14 +1,10 @@
 ---
 title: "Location Choice and Entry Games"
 field: "CASE 03 · Location choice and entry games"
-stage: idea
 levels: [1, 2, 3]
 sources: [Bresnahan–Reiss 1991, Seim 2006]
-verification_status: AI-drafted, sources not yet verified
 updated: 2026-10-30
-translation_status: draft
 source_updated: 2026-10-30
-source_sha256: 50697e6e1fecb62ddd9a46cdb6f36e53c4921a1c1b2c36e100078f147c774908
 ---
 
 # Location Choice and Entry Games
@@ -33,7 +29,7 @@ Jointly modeling entry and location takes us from store counts to the distances 
 
 ## Applications: store counts and local demand
 
-Entry in retail and services depends on local population, travel distances, competition, and fixed costs. We introduce Bresnahan–Reiss (1991) for the relationship between market size, entry, and competition, and Seim (2006) for entry and location or product-type choice. **Applications and references: AI-drafted, sources not yet verified.**
+Entry in retail and services depends on local population, travel distances, competition, and fixed costs. We introduce Bresnahan–Reiss (1991) for the relationship between market size, entry, and competition, and Seim (2006) for entry and location or product-type choice.
 
 ## Scope and limitations
 
@@ -108,12 +104,12 @@ Catchment-area analysis for store development, local service provision, urban po
 Complete this section after an activity takes place. The record is currently blank.
 
 | Date | Activity | Student outcomes / shareable work | Next question |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 |  |  |  |  |
 
 ## References and sources
 
-All entries below are **AI-drafted, sources not yet verified**. The original text, empirical settings, and assumptions will be checked before publication.
+
 
 - Bresnahan, T. F. and Reiss, P. C. (1991), “Entry and Competition in Concentrated Markets.”
 - Seim, K. (2006), “An Empirical Model of Firm Entry with Endogenous Product-Type Choices.”

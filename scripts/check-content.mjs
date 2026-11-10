@@ -1,13 +1,13 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {load} from 'cheerio';
-import {rewriteLink} from '../src/lib/paths.mjs';
+import {rewriteLink,canonicalRoute} from '../src/lib/paths.mjs';
 import {deploymentBase} from '../src/lib/deployment.mjs';
 const pages=JSON.parse(fs.readFileSync('provenance/pages.json'));
 const differences=[],errors=[];let checks=0;
 for(const [dir,base] of [['dist-github',deploymentBase({...process.env,DEPLOY_TARGET:'github'})],['dist-cloudflare','/']]){
  for(const p of pages){
-  const html=fs.readFileSync(`${dir}${p.route}index.html`,'utf8'),$=load(html);
+  const html=fs.readFileSync(`${dir}${canonicalRoute(p.route)}index.html`,'utf8'),$=load(html);
   const text=$('.entry-content').text().replace(/\s+/gu,'');
   const links=$('.entry-content a[href]').toArray().map(el=>({text:$(el).text().trim(),href:$(el).attr('href')}));
   const expected=p.links.map(l=>({...l,href:rewriteLink(l.href,base)}));

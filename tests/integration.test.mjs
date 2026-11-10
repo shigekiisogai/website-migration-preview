@@ -6,6 +6,7 @@ import path from 'node:path';
 import {load} from 'cheerio';
 import {deploymentBase} from '../src/lib/deployment.mjs';
 import {appliedPage} from '../src/lib/applied.mjs';
+import {presentCasebook,developmentNotice} from '../src/lib/casebook-presentation.mjs';
 import {rewriteLink} from '../src/lib/paths.mjs';
 import {integrateInteractiveHeader} from '../scripts/interactive-header.mjs';
 test('both builds give all interactive documents the personal navigation and preserve inline teaching scripts',()=>{
@@ -41,10 +42,10 @@ test('new material links respect both deployment bases',()=>{
  for(const base of ['/','/website-migration-preview/'])assert.equal(rewriteLink('/teaching/interactive/',base),`${base}teaching/interactive/`);
 });
 const walk=p=>fs.readdirSync(p,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(`${p}/${e.name}`):[`${p}/${e.name}`]);
-test('all 22 applied snapshots retain article text, IDs, controls and source downloads',()=>{
+test('all 22 applied snapshots retain approved article text, IDs, controls and source downloads',()=>{
  const files=walk('src/materials/applied');assert.equal(files.length,22);
  for(const file of files){
-  const raw=fs.readFileSync(file,'utf8'),source=load(raw),key=file.split('/applied/')[1];
+  const raw=fs.readFileSync(file,'utf8'),source=load(presentCasebook(raw)),key=file.split('/applied/')[1];
   for(const base of ['/','/website-migration-preview/']){
    const page=appliedPage(raw,key,base),out=load(page.toolbar+page.body);
    if(!key.endsWith('/index.html'))assert.equal(page.title+out('article').text(),source('article').text());
@@ -63,6 +64,13 @@ test('all 22 applied snapshots retain article text, IDs, controls and source dow
    assert.equal(out('.level-picker button').length,source('.level-picker button').length);
    assert.ok(out('a[download]').attr('href').startsWith(base+'teaching/applied-micro/sources/'));
    assert.ok(out('a[data-language]').toArray().every(e=>out(e).attr('href').startsWith(base+'teaching/applied-micro/')));
+   assert.doesNotMatch(out.root().text(),/AI作成|原典未確認|AI-drafted|sources not yet verified|draft/);
+   assert.equal(out('.stage,.verification').length,0);
+   assert.equal(out('.development-notice').length,key.endsWith('/index.html')?1:0);
+   if(key.endsWith('/index.html')){
+    assert.equal(out('.development-notice').text(),developmentNotice[page.lang]);
+    assert.equal(out('.case-card .case-tags span').length,3);
+   }
   }
  }
 });

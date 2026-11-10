@@ -1,12 +1,9 @@
 ---
 title: 実証ミクロ
 field: FIELD 02 · 構想一覧
-stage: idea
 levels: [1, 2, 3]
 sources: [Berry 1994, Bresnahan–Reiss 1991]
-verification_status: AI作成・原典未確認
 updated: 2026-10-30
-translation_status: draft
 source_updated: 2026-10-30
 ---
 
@@ -28,6 +25,6 @@ source_updated: 2026-10-30
 地域の需要と固定費用の変化から、参入退出を考えます。
 同じ地域を時点間で比べるデータと、静学・動学の区別が検討課題です。
 
-出典候補：Berry（1994）、Bresnahan–Reiss（1991）。**AI作成・原典未確認**。
+出典候補：Berry（1994）、Bresnahan–Reiss（1991）。
 
 [トップへ](../index.md#fields)

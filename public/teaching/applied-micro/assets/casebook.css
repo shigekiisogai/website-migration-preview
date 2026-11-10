@@ -130,9 +130,8 @@
 
 /* Compact overview and native disclosure controls, using the site's blue palette. */
 .applied-content .casebook-warning { display:flex; flex-wrap:wrap; gap:4px 12px; padding:10px 16px; margin:0 0 16px; border-left:3px solid var(--green); background:var(--soft); font-size:12px; }
-.applied-content .casebook-warning .verification { color:var(--ink); font-weight:600; }
-.applied-content .casebook-warning .overview-warning { flex-basis:100%; max-width:none; margin:0; font-size:13px; line-height:1.7; }
-.applied-content .casebook-warning:has(.overview-warning) > .verification { display:none; }
+.applied-content .page-meta .overview-warning { flex-basis:100%; max-width:none; margin:0; font-size:13px; line-height:1.7; }
+.applied-content .page-meta .development-notice { flex-basis:100%; max-width:none; margin:0; padding:12px 16px; background:var(--soft); border-left:3px solid var(--green); font-size:15px; line-height:1.8; color:var(--ink); }
 .applied-content details.contents { margin:0 0 18px; padding:10px 0; }
 .applied-content .contents summary { font-size:14px; }
 .applied-content .contents ol { padding-top:10px; }

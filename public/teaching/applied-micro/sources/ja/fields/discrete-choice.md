@@ -1,12 +1,9 @@
 ---
 title: 離散選択
 field: FIELD 03 · 構想一覧
-stage: idea
 levels: [1, 2, 3]
 sources: [McFadden 1974]
-verification_status: AI作成・原典未確認
 updated: 2026-10-30
-translation_status: draft
 source_updated: 2026-10-30
 ---
 
@@ -23,6 +20,6 @@ source_updated: 2026-10-30
 架空の商品を追加して、代替の方向と購入しない人の変化を比べます。
 ロジットのIIAという制約を考える事例を想定しています。
 
-出典候補：McFadden（1974）。**AI作成・原典未確認**。
+出典候補：McFadden（1974）。
 
 [トップへ](../index.md#fields)

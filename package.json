@@ -17,6 +17,7 @@
     "test": "node --test tests/*.test.mjs tests/interactive/*.test.cjs",
     "check:content": "node scripts/check-content.mjs",
     "check:publish": "node scripts/check-publish.mjs",
+    "check:redirects": "node scripts/check-redirects.mjs",
     "import:wxr": "python3 scripts/import-wxr.py",
     "check:links": "node scripts/check-links.mjs dist-github && node scripts/check-links.mjs dist-cloudflare",
     "build:github:root": "PAGES_BASE_PATH=/ node scripts/build.mjs github",

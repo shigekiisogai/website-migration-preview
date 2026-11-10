@@ -1,62 +1,50 @@
-# 教育コンテンツの統合試作（2026-11-09）
+# 教育コンテンツの統合（2026-11-10）
 
-Teaching、Course Materials、日本語ページの「自習用教材 / Self-study materials」から、次の教材へ進めます。
+Teachingは担当授業の一覧、Course Materialsは教材・資料への入口として使います。Teachingは年度・学期別の箇条書きで、対象が元原稿に明記された科目に対象を添えます。自習用教材への案内はCourse Materialsへの1件にまとめています。
 
-- `/teaching/applied-micro/`：日英11組の応用事例集。個人サイトの共通レイアウトを使用します。
-- `/teaching/interactive/`：Interactive Microeconomicsの目次と7章。章間リンクは相対URLです。各ページ上部から個人サイトへ戻れます。
+- `/course-materials/`：講義ノート・問題・解答・自習用教材。既存のリンクを維持。
+- `/teaching/applied-micro/`：応用事例集。日英11組のページ。
+- `/teaching/interactive/`：Interactive Microeconomicsの目次と7章。
 
-## 配信先を切り替える
-
-```sh
-npm run build:github            # /website-migration-preview/
-npm run build:github:root       # /（将来のユーザーサイト）
-PAGES_REPOSITORY=sisogai.github.io npm run build:github  # 同じく /
-PAGES_BASE_PATH=/another-preview/ npm run build:github  # 明示したbase
-npm run build:cloudflare        # 常に /
-```
-
-`PAGES_BASE_PATH` は `/` または `/repository/` 形式です。既定値は従来どおりです。`dist-github/` はビルドごとに置き換わるため、最後に使ったbaseとリンク検査時のbaseを合わせます。
+## ビルドと検査
 
 ```sh
-npm ci --ignore-scripts
 npm test
 npm run build:github
 npm run build:cloudflare
 npm run test:applied
 npm run check:publish
 npm run check:links
+npm run check:redirects
 npm run check:content
-# ルート配信の追加検査
-npm run build:github:root
-node scripts/check-links.mjs dist-github /
-# 試験公開向けの出力へ戻す
-npm run build:github
 ```
 
-`check:links` は全出力HTMLのhref/src、内部ファイル、フラグメント、base、重複ID、noindexを検査します。外部リンクは一覧に記録し、接続しません。結果は `.local/links-*.json` に保存します。
+GitHub Pagesの既定baseは `/website-migration-preview/`、Cloudflareは `/` です。GitHub側は `PAGES_BASE_PATH=/` または `PAGES_REPOSITORY=sisogai.github.io` でもルート配信を指定できます。今回の実行結果・確認範囲はルートの `REPORT_ROUND3.md` に記録しています。
 
-`check:content` は既存14ページの本文・リンクと移行時の比較基準を照合し、全差分を `.local/content-results.json` に記録します。教材への導線追加とデザイン修正により、Home・Teaching・Course Materials・日本語の4ページ×2ビルドで差分を報告します。比較基準の更新は本人の差分確認後に行います。既存の公開ワークフローはこの検査で停止する状態を維持しています。
+`check:content` は移行時の比較基準を保持します。ルート変更後も `canonicalRoute()` で新URLの本文を読み、14ページ×2ビルドを比較します。今回の差分は4ページ×2ビルドで、比較基準の承認・更新は行っていません。差分のある状態では既存の公開ワークフローがこの検査で停止します。
 
-2026-11-09のデザイン修正では、HomeのQuick Linksに自習用教材を追加し、Teachingの科目一覧を資料リンクと対象の記載が分かるカードへ変更しました。対象は元の科目名に明記された範囲で表示し、年度が対応する5つの既存資料ページへリンクしています。
+`check:links` は全出力HTMLのhref/src、内部ファイル、フラグメント、旧URLへの内部リンク、base、重複ID、noindexを検査します。外部リンクには接続しません。`check:redirects` は旧URL転送、公開対象から外したページの混入、応用事例集の廃止表示を両ビルドで検査します。結果は `.local/` に保存します。
 
-共通ヘッダーのマークアップは `src/lib/navigation.mjs`、スタイルは `public/site-header.css` で共有します。`scripts/build.mjs` はAstro生成後、8つのInteractive教材にも配信先のbaseに合わせた同じヘッダーを挿入します。教材本体の暗い配色とinline計算スクリプトを保持します。`astro dev` のpublic配下は元のスナップショットです。ヘッダー確認にはビルド出力を使います。
+Macでの今回のWXRテストには `WXR_TEST_PYTHON` で指定の作業用Pythonランチャーを渡しました。固定したローカルXMLテストデータだけを処理します。
 
-応用事例集の表示変換は、冒頭のパンくずと言語切替、折りたたむ目次、注意帯、分野・難易度付きの3事例カードを生成します。資料集の説明と全分野へのリンクはカードの後の折りたたみ案内に残し、既存アンカーと原稿ダウンロードを保持します。元HTML・配布Markdown・計算用JavaScriptは統合時点のままです。
+## 表示と素材
 
-## 素材と更新
+共通ヘッダーは `src/lib/navigation.mjs` と `public/site-header.css` を共有します。`scripts/build.mjs` が8つのInteractive教材にもbaseに合わせたヘッダーを挿入します。ヘッダーはビルド出力で確認します。
 
-- 応用事例集の生成済みHTML：`src/materials/applied/{ja,en}/`。これは統合時点のスナップショットです。`src/lib/applied.mjs` が本文・目次・状態表示・言語切替・出典欄を取り出し、内部リンクをAstroのパスへ変換します。
-- ダウンロード用の原稿：`public/teaching/applied-micro/sources/`。日英Markdownと翻訳状態を保持します。今後の本文更新では、元の原稿を修正・再生成し、HTMLスナップショット、配布原稿、翻訳状態を一緒に差し替えます。公開前に日英対照と差分を確認します。
-- 計算・操作：`public/teaching/applied-micro/assets/`。元の4本のJavaScriptを保持。`casebook.css` は元CSSを `.applied-content` 内に限定し、個人サイトの配色に合わせたものです。
-- 既存教材：`public/teaching/interactive/`。teaching正本のcommitと元ファイルのSHA-256は `provenance/teaching-integration.json` に記録。更新時もorigin/mainを取得し、章間URLと戻りリンクを確認します。
-- 教材の既存回帰テスト：`tests/interactive/`。応用事例集の計算・DOM操作テスト：`tests/applied/`（Cloudflareビルド後に実行）。DOMテストは描画・ブラウザーのCSP実行を確認するものとは区別します。
+Interactive教材の表示は `public/teaching/interactive/interactive-light.css` で白・淡い背景に調整しています。冒頭説明の文字サイズ・行間・横幅を整え、canvasはCSSの色変換で明るく表示します。HTMLの変更はこのCSSの読み込み1行です。本文、数式、KaTeX設定、計算・描画スクリプトを保持します。
 
-原稿中の「AI作成・原典未確認」、翻訳draft、架空データ・利用条件の表示を維持しています。本文・コード全体の公開ライセンスは元資料の記載どおり公開前の決定事項です。
+応用事例集の原HTMLスナップショットは `src/materials/applied/{ja,en}/` に保持します。`src/lib/casebook-presentation.mjs` が承認された表示変更を適用し、`src/lib/applied.mjs` が共通レイアウト、折りたたむ目次、カード、言語切替、内部リンクを生成します。各カードとページの状態表示は外し、日英それぞれの目次に資料集全体の作成中案内を1件表示します。デモには説明用の架空データである旨を残しています。
 
-## スクリプトと配信ヘッダー
+配布Markdownは `public/teaching/applied-micro/sources/` にあり、AI・翻訳draft・事例別の状態表示を取り除いた版です。編集前の配布原稿は `.migration/round3/sources/` に退避しています。計算・操作用の4本のJavaScriptは保持しています。原HTML・JavaScript・inlineスクリプトのハッシュは `provenance/teaching-integration.json` と照合します。
 
-共通LayoutにCSPのmetaを置き、通常ページは `script-src 'none'`、応用事例集は `'self'` を指定します。既存教材は元のinlineコードとKaTeX 0.16.9のCDNを使うため、教材HTMLのmetaでその範囲を許可します。外部CDNへの接続とColab資料の内容は今回の内部リンク検査に含みません。
+本文とプログラム全体の公開ライセンスについては原資料の記載を維持しています。
 
-Cloudflareの `_headers` は全ページにnoindex、nosniff、Referrer-Policy、`frame-ancestors 'none'` を付けます。他のCSP指示は各HTMLのmetaが担います。複数ルールのCSPを重ねるとスクリプト禁止が残るため、共通ヘッダーとHTMLの役割を分けています。[Cloudflare公式のヘッダー仕様](https://developers.cloudflare.com/workers/static-assets/headers/)も参照できます。
+## URLと公開範囲
 
-`npm run preview:cloudflare` の開発用registryは `.local/wrangler-registry` に置き、プロジェクト内で完結させます。ローカルHTTPで48ページの200、404、ヘッダーとmetaの組合せを検査しました。実ブラウザーでの表示・CSP実行とCDNによる数式描画は、公開前の確認事項です。
+`src/lib/redirects.json` に日本語スラッグ5件と英字URLの対応を記載しています。旧URLにmeta refresh・canonical・noindexを含む静的ページを両ビルドで生成します。新URLの一覧は `docs/page-map.md`、ナビゲーションは `src/lib/routes.json` を参照します。
+
+Hermesの3ページと専用コンポーネントは `.migration/round3/hermes-personal-assistant/` に退避しています。この領域はGitと公開ビルドの対象外です。公開サイトマップを生成する設定はありません。
+
+## CSPと配信設定
+
+通常ページは `script-src 'none'`、応用事例集は `'self'`、既存Interactive教材はinlineコードとKaTeX 0.16.9のCDNを許可する既存metaを使います。Cloudflareの `_headers` と配信設定は維持しています。今回の検査は外部CDNへの接続・ブラウザー上の数式描画・公開環境のHTTP応答を含みません。

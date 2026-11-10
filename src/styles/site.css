@@ -71,12 +71,6 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #4388bc; outline-off
 .entry-content .self-study-card { padding:22px 26px; border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:8px; background:#f4f7fa; margin-bottom:30px; }
 .entry-content .self-study-card h2 { margin:0 0 14px; font-size:23px; }
 .entry-content .self-study-card p { margin:8px 0; }
-.course-key, .course-audience, .materials-unlisted { color:var(--muted); font-size:14px; }
-.entry-content .course-list { list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr)); gap:16px; }
-.entry-content .course-list li { padding:20px; border:1px solid var(--line); border-radius:8px; min-width:0; }
-.entry-content .course-list h3 { font-size:18px; margin:0 0 8px; }
-.entry-content .course-list p { margin:0 0 12px; }
-.course-list a { font-size:15px; }
 .materials-page { padding-top:28px; }
 .materials-page .entry-title { font-size:clamp(26px,2.6vw,36px); margin-bottom:20px; padding-bottom:16px; }
 .casebook-toolbar { display:flex; align-items:center; justify-content:space-between; gap:8px 24px; flex-wrap:wrap; margin-bottom:16px; font-size:14px; }

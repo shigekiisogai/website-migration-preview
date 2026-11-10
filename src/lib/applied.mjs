@@ -1,8 +1,9 @@
 import {load} from 'cheerio';
 import {withBase} from './paths.mjs';
+import {presentCasebook,developmentNotice} from './casebook-presentation.mjs';
 export const appliedRoot='/teaching/applied-micro/';
 export function appliedPage(html,key,base='/') {
- const $=load(html);
+ const $=load(presentCasebook(html));
  const lang=key.split('/')[0];
  const title=$('article > h1').first().text();
  const heading=$('article > h1').first();
@@ -38,7 +39,6 @@ export function appliedPage(html,key,base='/') {
    const tags=$('<div class="case-tags"></div>');
    tags.append(fields[i].clone().text(cells.eq(0).text()));
    tags.append($('<span></span>').text(cells.eq(2).text()));
-   tags.append($('<span></span>').text(cells.eq(3).text()));
    card.append(tags);
    const level=$('.level-index a').toArray().find(a=>$(a).attr('href')===link.attr('href'));
    if(level)card.append($('<p class="case-entry-level"></p>').append($(level).clone()));
@@ -53,10 +53,10 @@ export function appliedPage(html,key,base='/') {
   cards.nextAll().appendTo(guide);
   article.append(guide);
   $('.page-meta').append(warning);
+  $('.page-meta').append($('<p class="development-notice"></p>').text(developmentNotice[lang]));
  }
  const meta=$('.page-meta');
- meta.addClass('casebook-warning').attr('role','note');
- meta.children('.stage').removeClass('stage');
+ meta.attr('role','note');
  const content=$('#main').html();
  const footer=$('footer').html();
  const fragment=load(`<div class="applied-content">${content}<div class="casebook-meta">${footer}</div></div>`,null,false);

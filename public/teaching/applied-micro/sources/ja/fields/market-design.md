@@ -1,12 +1,9 @@
 ---
 title: マーケットデザイン
 field: FIELD 01 · 構想一覧
-stage: idea
 levels: [1, 2, 3]
 sources: [Gale–Shapley 1962]
-verification_status: AI作成・原典未確認
 updated: 2026-10-30
-translation_status: draft
 source_updated: 2026-10-30
 ---
 
@@ -16,7 +13,7 @@ source_updated: 2026-10-30
 
 ## 収録事例
 
-[安定マッチングとDAアルゴリズム](../cases/matching-da.md) — DAの試作デモを公開前のローカル版で体験できます。ゼミでの取組みは構想段階です。
+[安定マッチングとDAアルゴリズム](../cases/matching-da.md) — DAの試作デモを公開前のローカル版で体験できます。
 
 ## 構想：オークションの入札ルール
 
@@ -28,6 +25,6 @@ source_updated: 2026-10-30
 学校の定員や優先順位を変えると、誰の割当てが変わる？
 DAの基本教材に続く、制度上の条件を比べる事例を検討します。
 
-出典候補：Gale–Shapley（1962）。**AI作成・原典未確認**。
+出典候補：Gale–Shapley（1962）。
 
 [トップへ](../index.md#fields)

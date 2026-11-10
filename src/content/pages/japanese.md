@@ -1,6 +1,6 @@
 ---
 title: "磯貝 茂樹"
-route: "/日本語/"
+route: "/ja/"
 source: "https://shigekiisogai.wordpress.com/%E6%97%A5%E6%9C%AC%E8%AA%9E/"
 lang: "ja"
 ---

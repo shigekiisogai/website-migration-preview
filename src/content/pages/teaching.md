@@ -5,71 +5,71 @@ source: "https://shigekiisogai.wordpress.com/teaching/"
 lang: "en"
 ---
 
-<section class="self-study-card" aria-labelledby="self-study-materials">
-<h2 id="self-study-materials">Self-study materials / 自習用教材</h2>
-<p><a href="/teaching/applied-micro/">Applied Microeconomics: A Casebook / ミクロ経済学 応用事例集</a></p>
-<p><a href="/teaching/interactive/">Interactive Microeconomics / インタラクティブ教材</a></p>
-</section>
+自習用教材は [Course Materials / 講義資料](/course-materials/) をご覧ください。
 
-<p class="course-key">Audience / 対象：— = 記載なし / not specified. 資料リンクは掲載を確認できた科目に表示しています。</p>
+## 2026
 
-## 2026 Spring
+### Spring / 前期
 
-<ul class="course-list">
-<li><h3>Microeconomics I</h3><p class="course-audience">—</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>Thesis Seminar I</h3><p class="course-audience">—</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>ゲーム理論</h3><p class="course-audience">—</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>（帝塚山大学）ゲーム理論</h3><p class="course-audience">—</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>（帝塚山大学）社会と人間A(経済)</h3><p class="course-audience">—</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
+<ul>
+<li>Microeconomics I</li>
+<li>Thesis Seminar I</li>
+<li>ゲーム理論</li>
+<li>（帝塚山大学）ゲーム理論</li>
+<li>（帝塚山大学）社会と人間A(経済)</li>
 </ul>
 
-## 2025 Fall
+## 2025
 
-<ul class="course-list">
-<li><h3>Microeconomics II</h3><p class="course-audience">—</p><a href="/2025f-microeconomics-ii/">Course materials / 資料を見る</a></li>
-<li><h3>Microeconomics (Grad School)</h3><p class="course-audience">Graduate / 大学院</p><a href="/2025f-microeconomics-graduate-school/">Course materials / 資料を見る</a></li>
-<li><h3>Research Methodology (Grad School)</h3><p class="course-audience">Graduate / 大学院</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>Research Seminar III</h3><p class="course-audience">—</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>Thesis Seminar II</h3><p class="course-audience">—</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
+### Fall / 後期
+
+<ul>
+<li>Microeconomics II</li>
+<li>Microeconomics（Graduate / 大学院）</li>
+<li>Research Methodology（Graduate / 大学院）</li>
+<li>Research Seminar III</li>
+<li>Thesis Seminar II</li>
 </ul>
 
-## 2025 Spring
+### Spring / 前期
 
-<ul class="course-list">
-<li><h3>Microeconomics I</h3><p class="course-audience">—</p><a href="/microeconomics-i-undergrad/">Course materials / 資料を見る</a></li>
-<li><h3>Research Seminar II</h3><p class="course-audience">—</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>Thesis Seminar I</h3><p class="course-audience">—</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>ゲーム理論</h3><p class="course-audience">—</p><a href="/ゲーム理論（2025年度前期）/">Course materials / 資料を見る</a></li>
+<ul>
+<li>Microeconomics I</li>
+<li>Research Seminar II</li>
+<li>Thesis Seminar I</li>
+<li>ゲーム理論</li>
 </ul>
 
-## 2024 Fall
+## 2024
 
-<ul class="course-list">
-<li><h3>Microeconomics II (Undergrad)</h3><p class="course-audience">Undergraduate / 学部</p><a href="/microeconomics-ii-undergrad/">Course materials / 資料を見る</a></li>
-<li><h3>Introductory Macroeconomics (Undergrad)</h3><p class="course-audience">Undergraduate / 学部</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>Microeconomics (Graduate School)</h3><p class="course-audience">Graduate / 大学院</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>Research Seminar I</h3><p class="course-audience">—</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>Research Seminar III</h3><p class="course-audience">—</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
+### Fall / 後期
+
+<ul>
+<li>Microeconomics II（Undergraduate / 学部）</li>
+<li>Introductory Macroeconomics（Undergraduate / 学部）</li>
+<li>Microeconomics（Graduate / 大学院）</li>
+<li>Research Seminar I</li>
+<li>Research Seminar III</li>
 </ul>
 
-## 2024 Spring
+### Spring / 前期
 
-<ul class="course-list">
-<li><h3>Microeconomics I (Undergrad)</h3><p class="course-audience">Undergraduate / 学部</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
+<ul>
+<li>Microeconomics I（Undergraduate / 学部）</li>
 </ul>
 
 ## 過去に担当した授業
 
 <strong>Tokyo Metropolitan University / 東京都立大学 (2019-2023, 2026)</strong>
-<ul class="course-list">
-<li><h3>Special Lectures on Microeconomics / 経済経営特別講義（Microeconomics） (undergrad)</h3><p class="course-audience">Undergraduate / 学部</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
+<ul>
+<li>Special Lectures on Microeconomics / 経済経営特別講義（Microeconomics）（Undergraduate / 学部）</li>
 </ul>
 <strong><span class="uppercase">Southwestern University of Finance and Economics / 西南財経大学(2017-2023)</span></strong>
-<ul class="course-list">
-<li><h3>Money and Banking (undergrad)</h3><p class="course-audience">Undergraduate / 学部</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>Advanced Microeconomics I (graduate)</h3><p class="course-audience">Graduate / 大学院</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>Advanced Microeconomics II (graduate)</h3><p class="course-audience">Graduate / 大学院</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>Advanced Micro Theory (graduate)</h3><p class="course-audience">Graduate / 大学院</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>Applied Microeconomic Theory II (graduate)</h3><p class="course-audience">Graduate / 大学院</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
-<li><h3>Theory of Industrial Organization (graduate)</h3><p class="course-audience">Graduate / 大学院</p><span class="materials-unlisted">資料リンク未掲載 / Materials not listed</span></li>
+<ul>
+<li>Money and Banking（Undergraduate / 学部）</li>
+<li>Advanced Microeconomics I（Graduate / 大学院）</li>
+<li>Advanced Microeconomics II（Graduate / 大学院）</li>
+<li>Advanced Micro Theory（Graduate / 大学院）</li>
+<li>Applied Microeconomic Theory II（Graduate / 大学院）</li>
+<li>Theory of Industrial Organization（Graduate / 大学院）</li>
 </ul>

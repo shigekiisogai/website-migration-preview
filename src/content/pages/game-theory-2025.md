@@ -1,6 +1,6 @@
 ---
 title: "ゲーム理論（2025年度前期）"
-route: "/ゲーム理論（2025年度前期）/"
+route: "/game-theory-2025/"
 source: "https://shigekiisogai.wordpress.com/%E3%82%B2%E3%83%BC%E3%83%A0%E7%90%86%E8%AB%96%EF%BC%882025%E5%B9%B4%E5%BA%A6%E5%89%8D%E6%9C%9F%EF%BC%89/"
 lang: "ja"
 ---

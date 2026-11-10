@@ -1,12 +1,9 @@
 ---
 title: "離散選択モデルによる需要予測と推定"
 field: CASE 02 · 離散選択とマーケティング
-stage: idea
 levels: [1, 2, 3]
 sources: [McFadden 1974, Berry 1994]
-verification_status: AI作成・原典未確認
 updated: 2026-10-30
-translation_status: draft
 source_updated: 2026-10-30
 ---
 
@@ -32,7 +29,7 @@ source_updated: 2026-10-30
 
 ## 実例：商品選択を分析する
 
-交通手段や商品の選択は、離散選択（discrete choice）モデルの応用例です。McFadden（1974）は条件付きロジットの基礎、Berry（1994）は差別化された商品の市場シェアから需要を分析する方法を学ぶ入口として取り上げます。**実例・文献説明はAI作成・原典未確認**です。
+交通手段や商品の選択は、離散選択（discrete choice）モデルの応用例です。McFadden（1974）は条件付きロジットの基礎、Berry（1994）は差別化された商品の市場シェアから需要を分析する方法を学ぶ入口として取り上げます。
 
 ## 適用範囲と限界
 
@@ -109,12 +106,12 @@ Berry（1994）につながる単純ロジットの関係は log(sⱼ) − log(s
 実施後に追記する欄です。現時点の記録は空欄です。
 
 | 実施日 | 何をしたか | 学生の成果・公開可能な成果物 | 次の問い |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 |  |  |  |  |
 
 ## 文献・出典
 
-以下はすべて **AI作成・原典未確認**。公開前に書誌情報・定式化・説明の対応を照合します。
+
 
 - McFadden, D.（1974）, “Conditional Logit Analysis of Qualitative Choice Behavior.”
 - Berry, S. T.（1994）, “Estimating Discrete-Choice Models of Product Differentiation.”

@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
-const allowedRoot=new Set(['package.json','package-lock.json','astro.config.mjs','wrangler.jsonc','README.md','.gitignore','.nvmrc']);
+const allowedRoot=new Set(['package.json','package-lock.json','astro.config.mjs','wrangler.jsonc','README.md','REPORT_ROUND3.md','.gitignore','.nvmrc']);
 const allowedDirs=['src/','public/','scripts/','tests/','docs/','provenance/','.github/workflows/'];
 const allowedExt=new Set(['.mjs','.astro','.css','.md','.json','.jsonc','.txt','.py','.yml','.yaml']);
 let files;

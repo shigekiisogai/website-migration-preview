@@ -1,12 +1,9 @@
 ---
 title: ビジネス応用
 field: FIELD 06 · 構想一覧
-stage: idea
 levels: [1, 2, 3]
 sources: []
-verification_status: AI作成・原典未確認
 updated: 2026-10-29
-translation_status: draft
 source_updated: 2026-10-29
 ---
 
@@ -29,6 +26,6 @@ source_updated: 2026-10-29
 成果に連動する報酬は、努力とリスク負担をどう変える？
 情報の非対称性を含む契約の基礎を、架空の例で考える構想です。
 
-本文は **AI作成・原典未確認**。文献と応用例は事例化の際に選定します。
+文献と応用例は事例化の際に選定します。
 
 [トップへ](../index.md#fields)

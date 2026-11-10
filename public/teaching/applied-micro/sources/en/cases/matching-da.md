@@ -1,14 +1,10 @@
 ---
 title: "Stable Matching and the Deferred Acceptance Algorithm"
 field: "CASE 01 · Market design"
-stage: idea
 levels: [1, 2, 3]
 sources: [Gale–Shapley 1962, Roth–Peranson 1999, Abdulkadiroğlu–Sönmez 2003]
-verification_status: AI-drafted, sources not yet verified
 updated: 2026-10-30
-translation_status: draft
 source_updated: 2026-10-30
-source_sha256: 8e79ee1ee0d4185140d91154c870baee04dbd67fa487ead366b1e3fe34fcad55
 ---
 
 # Stable Matching and the Deferred Acceptance Algorithm
@@ -33,7 +29,7 @@ Designing a matching system begins with preferences, capacities, priorities, and
 
 ## Applications: medical residency matching and school choice
 
-Matching medical residents to hospitals and assigning students to schools are prominent applications of market design. We plan to read Gale–Shapley (1962) for the foundations of stable matching, Roth–Peranson (1999) for the design of the physician matching market, and Abdulkadiroğlu–Sönmez (2003) for school choice. **Applications and references: AI-drafted, sources not yet verified.**
+Matching medical residents to hospitals and assigning students to schools are prominent applications of market design. We plan to read Gale–Shapley (1962) for the foundations of stable matching, Roth–Peranson (1999) for the design of the physician matching market, and Abdulkadiroğlu–Sönmez (2003) for school choice.
 
 ## Scope and limitations
 
@@ -91,12 +87,12 @@ Designing assignment and staffing systems, analyzing education policy, and alloc
 Complete this section after an activity takes place. The record is currently blank.
 
 | Date | Activity | Student outcomes / shareable work | Next question |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 |  |  |  |  |
 
 ## References and sources
 
-All entries below are **AI-drafted, sources not yet verified**. Authors, years, titles, and the relevant passages will be checked before publication.
+
 
 - Gale, D. and Shapley, L. S. (1962), “College Admissions and the Stability of Marriage.”
 - Roth, A. E. and Peranson, E. (1999), “The Redesign of the Matching Market for American Physicians: Some Engineering Aspects of Economic Design.”

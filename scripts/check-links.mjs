@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {load} from 'cheerio';
 import {deploymentBase} from '../src/lib/deployment.mjs';
+import redirects from '../src/lib/redirects.json' with {type:'json'};
 const dir=process.argv[2]||'dist-github';
 const base=process.argv[3]??deploymentBase({ ...process.env, DEPLOY_TARGET:dir==='dist-github'?'github':'cloudflare' });
 const origin='https://sisogai.github.io';
@@ -23,6 +24,7 @@ for(const [file,$] of documents){
   const decoded=decodeURIComponent(u.pathname);
   if(!decoded.startsWith(base)){errors.push(`${file}: escaped base ${value}`);continue;}
   const rel=decoded.slice(base.length);
+  if(Object.hasOwn(redirects,'/'+rel.replace(/index\.html$/,'')))errors.push(`${file}: legacy internal link ${value}`);
   let target=path.join(dir,rel);
   if(fs.existsSync(target)&&fs.statSync(target).isDirectory())target=path.join(target,'index.html');
   if(!fs.existsSync(target)){errors.push(`${file}: missing ${value} -> ${target}`);continue;}
