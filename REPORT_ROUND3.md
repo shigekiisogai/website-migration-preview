@@ -98,4 +98,4 @@ WXRテストは `WXR_TEST_PYTHON` に指定の作業用Pythonランチャーを�
 - `.local/redirect-results.json`：旧URL転送10件。
 - `.local/round3/http-results.json`、`preservation-results.json`：HTTP応答と保持確認。
 
-本レポートを含むコミットを作業ブランチに保存し、`origin/integrate-teaching-20261109` へpushします。commit・pushの最終結果は作業完了時の回答に記載します。認証情報を出力する操作は行っていません。
+実装コミット `36d2110`（`Implement approved teaching presentation and English routes`）を `origin/integrate-teaching-20261109` へpushし、成功とリモート追跡ブランチとの一致を確認しました。この成功記録は追加の記録用コミットに含め、同じブランチへ送ります。認証情報を出力する操作は行っていません。
